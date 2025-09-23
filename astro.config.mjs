@@ -22,8 +22,21 @@ export default defineConfig({
             },
           ],
         },
+        {
+          label: "Guides",
+          items: [
+            {
+              label: "Example Guide",
+              slug: "guides/example",
+            },
+          ],
+        },
       ],
       tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 2 },
+      editLink: {
+        baseUrl: "https://github.com/The-LukeZ/ticketon-docs/tree/main",
+      },
+      lastUpdated: true,
     }),
   ],
 });
