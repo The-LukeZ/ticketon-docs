@@ -8,18 +8,21 @@ export default defineConfig({
     starlight({
       title: "Ticketon",
       favicon: "/logo.png",
-      // sidebar: [
-      //   {
-      //     label: "Start Here",
-      //     items: [
-      //       { label: "Introduction", slug: "start/intro" },
-      //     ],
-      //   },
-      //   {
-      //     label: "Reference",
-      //     autogenerate: { directory: "reference" },
-      //   },
-      // ],
+      sidebar: [
+        {
+          label: "Start Here",
+          items: [
+            {
+              label: "Introduction",
+              slug: "start/intro",
+            },
+            {
+              label: "About",
+              slug: "start/about",
+            },
+          ],
+        },
+      ],
       tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 2 },
     }),
   ],
