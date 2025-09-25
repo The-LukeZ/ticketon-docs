@@ -3,7 +3,14 @@ title: Getting Started
 description: A guide to Ticketon and how to set it up.
 ---
 
-import { LinkButton, Tabs, TabItem } from "@astrojs/starlight/components";
+import {
+  LinkButton,
+  Tabs,
+  TabItem,
+  Aside,
+  Icon,
+} from "@astrojs/starlight/components";
+import Link from "../../../components/Link.astro";
 
 ## What is Ticketon?
 
@@ -19,15 +26,16 @@ It allows you to easily manage the support tickets of your community, providing 
 
 ## Terminology
 
-| Term              | Description                                                                                                                                                                                                              |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Ticket            | A private channel between a user and staff.                                                                                                                                                                              |
-| Staff             | Members with permissions to manage tickets.                                                                                                                                                                              |
-| (Ticket-)Category | A customizable grouping for support tickets in your Discord server, managed by the bot. It defines how tickets are created, named, and handled within a specific category, allowing for organized and role-based access. |
-| Custom Message    | A personalized message sendable by the bot.                                                                                                                                                                              |
-| Form              | A set of questions presented to users before they open a ticket, allowing for the collection of specific information.                                                                                                    |
-| Audit Log         | A record of all bot-related activities, providing transparency and security for your server.                                                                                                                             |
-| Starter Message   | The initial message in a ticket channel, which can be customized to provide information or instructions to users.                                                                                                        |
+| Term              | Description                                                                                                                                                                                          |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ticket            | A private channel between a user and staff.                                                                                                                                                          |
+| Staff             | Members with permissions to manage tickets.                                                                                                                                                          |
+| (Ticket-)Category | A customizable grouping for support tickets in your Discord server. It defines how tickets are created, named, and handled within a specific category, allowing for organized and role-based access. |
+| Custom Message    | A personalized message sendable by the bot, which can be used for **anything** - Panel Message, Starter Message, just a snippet, whatever you want.                                                  |
+| Form              | A set of questions presented to users before they open a ticket, allowing for the collection of specific information.                                                                                |
+| Audit Log         | A record of all bot-related activities, providing transparency and security for your server.                                                                                                         |
+| Starter Message   | The initial message in a ticket channel, which can be customized to provide information or instructions to users.                                                                                    |
+| Panel Message     | A message that is sent into a public channel with components to create tickets.                                                                                                                      |
 
 ---
 
@@ -41,7 +49,7 @@ It allows you to easily manage the support tickets of your community, providing 
 
 ### 2. Create a Ticket Category
 
-Go to the [Dashboard](https://ticketon.app/dash?next=/categories) and login with your Discord account.
+Go to the <Link href="https://ticketon.app/dash?next=/categories">Dashboard</Link> and login with your Discord account.
 
 Then, select your server, navigate to the **Categories** tab, and click on **Add Category**. Great! You have successfully created your first ticket category.
 
@@ -49,15 +57,118 @@ Then, select your server, navigate to the **Categories** tab, and click on **Add
 
 The layout is simple and intuitive.
 
-<Tabs>
+<Tabs syncKey="platform">
   <TabItem label="Desktop" icon="laptop">
     You have two tabs: **Message Overview** and **Settings**. You have a Dock at the bottom to switch between the two tabs.
 
     By clicking on a message in the overview, it loads the configuration options and switches the tab to **Settings**.
+
   </TabItem>
   <TabItem label="Mobile" icon="phone">
     The page is divided into two sections: **Message Overview** on the left and **Settings** on the right.
 
     By clicking on a message in the overview, it loads the configuration options on the right side.
+
   </TabItem>
 </Tabs>
+
+You need to change the following settings to get started:
+
+- **Open Tickets Category**: The category where open tickets will be created.
+- Change the Category Status to **Active**.
+
+<Aside type="caution">Don't forget to save your changes!</Aside>
+
+### 4. Make a Custom Message
+
+Go to the <Link href="https://ticketon.app/dash?next=/messages">Messages</Link> tab in the dashboard and click on **Add Message**.
+
+### 5. Customize the Message
+
+Congratulations, you have created your first custom message! Now you can customize your message.
+
+This message can be used for anything you like, but you want to make a message which will be used as a **Panel Message**.
+
+### 6. Send the Panel
+
+When you are done customizing your message, click on **Save Messages** at the top to save your message.
+
+<Aside type="note">
+  When on Mobile, this automatically switches you to the **Overview** tab again.
+  So you need to click on the message now to change the tab to **Settings**
+  again.
+</Aside>
+
+Now click on the blue **Settings** button besides the message name to open the settings of this message.
+
+Here you can paste in a channel link where the panel should be sent to.
+
+<Aside type="tip">
+  You can also paste a Message Link to edit an existing panel message.
+</Aside>
+
+### Quick Start Checklist
+
+- ✅ Invite Ticketon with the recommended permissions (see Troubleshooting).
+- ✅ Create a Category and set it to **Active**.
+- ✅ Add at least one Custom Message.
+- ✅ Paste a Channel Link or Message Link in the message settings and click **Send**.
+- ✅ Open a test ticket to confirm staff can see and manage it.
+
+### Panel & Message link formats
+
+Paste either a channel link to send a new panel or an existing message link to edit:
+
+```python
+# Channel link (sends a new panel message)
+https://discord.com/channels/<server_id>/<channel_id>
+
+# Message link (edits an existing panel message)
+https://discord.com/channels/<server_id>/<channel_id>/<message_id>
+```
+
+Tip: If a link doesn't work, ensure you copied the full URL and the bot has access to the target channel.
+
+### Common Troubleshooting
+
+#### Panel doesn't appear / can't send message
+
+- Ensure Ticketon has View Channel and Send Messages in the target channel.
+- Check role hierarchy — the bot's role must be above any roles it needs to manage.
+
+#### Users can't create tickets
+
+- Verify category permissions to allow the bot to create channels and manage permissions.
+- Ensure the category is set to **Active** in the dashboard and the category for open tickets is set.
+
+#### Slash commands missing
+
+- Re-invite the bot or wait a few minutes for commands to register; sometimes guild commands are faster.
+  Sometimes pressing `CTRL`+`R` / `CMD`+`R` in Discord helps.
+
+Recommended permissions (at minimum)
+
+- View Channels
+- Send Messages, Embed Links, Attach Files
+- Manage Channels (for creating ticket channels)
+- Manage Roles (if Ticketon assigns roles)
+- Read Message History
+
+### Commands & Examples
+
+<LinkButton href="/commands/overview" icon="right-arrow">
+  Go to Commands Overview
+</LinkButton>
+
+### Best practices
+
+- Name categories clearly, e.g. "General Support", "Bug Report", "Billing".
+- Limit staff roles to trusted moderators.
+- Use Forms to capture essential info (issue type, what was tried, etc) before ticket creation.
+- Keep panel messages short and add clear labels to buttons.
+
+## Next Steps
+
+- Explore <Link href="https://ticketon.app/unlimited">**Unlimited**</Link> for **unlimited categories**, **messages** and **forms**, and advanced features like a **Custom Support Schedule** and **Feedback**!
+- Visit the [Commands Overview](/commands/overview) to learn about all available commands.
+- Check out the [Dashboard Section](/dashboard/overview) for information on using the dashboard.
