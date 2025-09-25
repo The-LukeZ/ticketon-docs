@@ -1,11 +1,44 @@
 ---
 title: Getting Started
-description: A guide in my new Starlight docs site.
+description: A guide to Ticketon and how to set it up.
 ---
 
-Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
-Writing a good guide requires thinking about what your users are trying to do.
+import { LinkButton } from "@astrojs/starlight/components";
 
-## Further reading
+## What is Ticketon?
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+Ticketon is a modern ticketing bot for [Discord](https://discord.com).
+It allows you to easily manage the support tickets of your community, providing a seamless experience for both users and staff members.
+
+## Features
+
+- **Easy Configuration**: Set up Ticketon in minutes with a user-friendly and simple dashboard.
+- **Custom Messages**: Personalize the ticket experience with custom messages.
+- **Forms**: Collect specific information from users before they open a ticket.
+- **Audit Logs**: Keep track of all bot-related activities for security and transparency.
+
+## Terminology
+
+| Term              | Description                                                                                                                                                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Ticket            | A private channel between a user and staff.                                                                                                                                                                              |
+| Staff             | Members with permissions to manage tickets.                                                                                                                                                                              |
+| (Ticket-)Category | A customizable grouping for support tickets in your Discord server, managed by the bot. It defines how tickets are created, named, and handled within a specific category, allowing for organized and role-based access. |
+| Custom Message    | A personalized message sendable by the bot.                                                                                                                                                                              |
+| Form              | A set of questions presented to users before they open a ticket, allowing for the collection of specific information.                                                                                                    |
+| Audit Log         | A record of all bot-related activities, providing transparency and security for your server.                                                                                                                             |
+| Starter Message   | The initial message in a ticket channel, which can be customized to provide information or instructions to users.                                                                                                        |
+
+---
+
+## Getting Started (Finally!)
+
+### 1. Invite Ticketon to your server
+
+<LinkButton href="https://ticketon.app/invite" target="_blank" icon="external">
+  Invite Bot
+</LinkButton>
+
+### 2. Create a Ticket Category
+
+Go to the [Dashboard](https://ticketon.app/dash) 
