@@ -1,15 +1,16 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightThemeNova from "starlight-theme-nova";
+import catppuccin from "@catppuccin/starlight";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
       plugins: [
-        starlightThemeNova({
-          nav: [{ href: "/", label: "Home" }],
+        catppuccin({
+          dark: { accent: "peach", flavor: "mocha" },
+          light: { accent: "peach", flavor: "latte" },
         }),
       ],
       title: "Ticketon",
@@ -43,9 +44,7 @@ export default defineConfig({
         baseUrl: "https://github.com/The-LukeZ/ticketon-docs/tree/main",
       },
       lastUpdated: true,
-      customCss: [
-        "./src/styles/custom.css",
-      ]
+      customCss: ["./src/styles/custom.css"],
     }),
   ],
 });
