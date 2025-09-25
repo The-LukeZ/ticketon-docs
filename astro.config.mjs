@@ -39,7 +39,7 @@ export default defineConfig({
           ],
         },
       ],
-      tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 2 },
+      tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 3 },
       editLink: {
         baseUrl: "https://github.com/The-LukeZ/ticketon-docs/tree/main",
       },
