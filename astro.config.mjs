@@ -45,6 +45,15 @@ export default defineConfig({
       },
       lastUpdated: true,
       customCss: ["./src/styles/custom.css"],
+      head: [
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: "https://docs.ticketon.app/logo.png",
+          },
+        },
+      ],
     }),
   ],
 });
