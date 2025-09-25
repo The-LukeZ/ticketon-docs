@@ -3,7 +3,7 @@ title: Getting Started
 description: A guide to Ticketon and how to set it up.
 ---
 
-import { LinkButton } from "@astrojs/starlight/components";
+import { LinkButton, Tabs, TabItem } from "@astrojs/starlight/components";
 
 ## What is Ticketon?
 
@@ -41,4 +41,23 @@ It allows you to easily manage the support tickets of your community, providing 
 
 ### 2. Create a Ticket Category
 
-Go to the [Dashboard](https://ticketon.app/dash) 
+Go to the [Dashboard](https://ticketon.app/dash?next=/categories) and login with your Discord account.
+
+Then, select your server, navigate to the **Categories** tab, and click on **Add Category**. Great! You have successfully created your first ticket category.
+
+### 3. Configure your Ticket Category
+
+The layout is simple and intuitive.
+
+<Tabs>
+  <TabItem label="Desktop" icon="laptop">
+    You have two tabs: **Message Overview** and **Settings**. You have a Dock at the bottom to switch between the two tabs.
+
+    By clicking on a message in the overview, it loads the configuration options and switches the tab to **Settings**.
+  </TabItem>
+  <TabItem label="Mobile" icon="phone">
+    The page is divided into two sections: **Message Overview** on the left and **Settings** on the right.
+
+    By clicking on a message in the overview, it loads the configuration options on the right side.
+  </TabItem>
+</Tabs>
