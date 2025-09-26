@@ -1,0 +1,74 @@
+---
+title: Unlimited
+description: Learn more about the Unlimited Plan
+---
+
+import { Aside, LinkButton, LinkCard } from "@astrojs/starlight/components";
+
+## What is the Unlimited Plan?
+
+The Unlimited Plan is designed for users who need more resources and flexibility than the Free Plan offers. It provides unlimited access to all features and removes any usage caps.
+
+<Aside type="note" icon="information" title="Note">
+  There are still some limitations on the Unlimited Plan, but it's unlikely
+  you'll hit them. If you do, please reach out to our support by creating a
+  ticket in [Discord](https://ticketon.app/server).
+</Aside>
+
+## Comparison
+
+<small>
+  Note, that the Free Plan is designed to offer the best experience possible for
+  casual users, while the Unlimited Plan is tailored for power users and larger
+  communities with higher demands.
+</small>
+
+| Feature                       | Free    | Unlimited       |
+| ----------------------------- | ------- | --------------- |
+| Categories                    | 3       | Unlimited (50)  |
+| Forms                         | 3       | Unlimited (100) |
+| Messages                      | 9       | Unlimited (200) |
+| Audit Log Retention           | 30 Days | 30 Days         |
+| Custom Support Schedule       | ❌      | ✅              |
+| Automation Features           | ❌      | ✅              |
+| Feedback Collection           | ❌      | ✅              |
+| Preserve Transcript Images \* | ❌      | ✅              |
+
+\* Images (And only images! Any other file type will not be preserved due to privacy reasons) in transcripts are viewable as long as Discord's CDN Cache holds them. If a ticket channel is deleted, the images will be lost after some time.
+Preserving transcript images means, that images in transcripts will get uploaded to our own CDN for 6 months after the ticket was closed.
+A workaround to this is to enabled Threads for a category, because Thread Tickets will not be deleted by the bot;
+As long as the user doesn't delete their own messages, the images will stay in the transcript. Images larger than 50MB will not be preserved, due to storage limitations.
+
+## Pricing
+
+The Unlimited Plan is available for a monthly fee of $3.99 or an annual fee of €25.00, which saves you 30% compared to the monthly plan.
+
+<details>
+  <summary>Why is the annual plan in EUR while the monthly plan is in USD?</summary>
+
+    I (the developer) am based in Germany, so the better question is, **why is the monthly plan in USD?** Well, the answer is simple: Discord is forcing developers to use their in-app purchase system for subscriptions which only supports USD and non-customizable pricing.
+
+    So we **have** to use USD for the monthly plan. The catch here is, that Discord takes a large cut of the revenue - if you pay with Paddle through the dashboard, we benefit more from your subscription.
+
+</details>
+
+<Aside type="tip" icon="warning">
+  We encourage users to subscribe directly through the dashboard to support the
+  project more effectively.
+
+  <LinkButton href={"https://ticketon.app/dash/?next=" + encodeURIComponent("/premium&plan=unlimited")} icon="right-arrow" variant="primary" target="_blank" rel="noopener">
+    Go to Dashboard
+  </LinkButton>
+</Aside>
+
+## Is there a Free Trial?
+
+No, there is no free trial for the Unlimited Plan. However, you can always start with the Free Plan and upgrade to the Unlimited Plan at any time if you find that you need more resources or features.
+If you have any questions or need assistance, feel free to reach out to our support team on [Discord](https://ticketon.app/server).
+
+<LinkCard
+  href="https://ticketon.app#faq"
+  target="_blank"
+  title="FAQ"
+  description="Frequently Asked Questions"
+/>

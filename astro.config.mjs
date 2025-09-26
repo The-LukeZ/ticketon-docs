@@ -27,6 +27,10 @@ export default defineConfig({
               label: "About",
               slug: "start/about",
             },
+            {
+              label: "Unlimited",
+              slug: "start/unlimited",
+            },
           ],
         },
         {
@@ -37,6 +41,14 @@ export default defineConfig({
               slug: "guides/example",
             },
           ],
+        },
+        {
+          label: "Dashboard",
+          items: [],
+        },
+        {
+          label: "Commands",
+          items: [],
         },
       ],
       tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 3 },
