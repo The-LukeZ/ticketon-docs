@@ -1,0 +1,16 @@
+@layer base, starlight, theme, components, utilities;
+
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+:root {
+  --sl-content-width: 60rem;
+  --sl-text-5xl: 4rem;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}

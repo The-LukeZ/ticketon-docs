@@ -1,9 +1,0 @@
-:root {
-  --sl-content-width: 60rem;
-  --sl-text-5xl: 4rem;
-}
-
-.inline-block {
-  display: inline-block;
-  vertical-align: middle;
-}

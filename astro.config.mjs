@@ -3,9 +3,12 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
 import docsearch from "@astrojs/starlight-docsearch";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://docs.ticketon.app",
+  trailingSlash: "ignore",
   integrations: [
     starlight({
       plugins: [
@@ -24,7 +27,7 @@ export default defineConfig({
         baseUrl: "https://github.com/The-LukeZ/ticketon-docs/tree/main",
       },
       lastUpdated: true,
-      customCss: ["./src/styles/custom.css"],
+      customCss: ["./src/styles/global.css"],
       head: [
         {
           tag: "meta",
@@ -66,4 +69,8 @@ export default defineConfig({
       ],
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

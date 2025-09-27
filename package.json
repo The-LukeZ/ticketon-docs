@@ -12,9 +12,12 @@
   "dependencies": {
     "@astrojs/starlight": "^0.36.0",
     "@astrojs/starlight-docsearch": "^0.6.0",
+    "@astrojs/starlight-tailwind": "^4.0.1",
     "@catppuccin/starlight": "^1.0.2",
+    "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.0",
-    "sharp": "^0.34.4"
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.13"
   },
   "packageManager": "pnpm@10.17.1"
 }
