@@ -1,0 +1,26 @@
+---
+title: Tickets Command
+description: How to use the tickets command
+---
+
+This page explains how to use the `tickets` command in Starlight.
+
+The `/tickets` command is **not intended for public use**. It is primarily designed for server staff to manage support tickets efficiently.
+Therefore, it requires `MODERATE_MEMBERS` permission by default.
+
+## Subcommands
+
+| Subcommand    | Description                                        |
+| ------------- | -------------------------------------------------- |
+| `list`        | Lists all open tickets                             |
+| `claim` \*    | Claims a specified ticket for the command executor |
+| `unclaim` \*  | Unclaims a specified ticket                        |
+| `add` \*      | Adds up to 5 users to the ticket                   |
+| `remove` \*   | Removes up to 5 users from the ticket              |
+| `move` \*     | Moves the ticket to a different ticket category    |
+| `close` \*    | Closes the ticket in which the command is executed |
+| `reopen` \*\* | Reopens a specified closed ticket                  |
+| `delete` \*\* | Deletes a specified ticket                         |
+
+\* This command is expected to be used within a ticket channel.  
+\*\* This command can be used directly within a ticket channel. When used outside a ticket channel, a ticket ID must be provided.

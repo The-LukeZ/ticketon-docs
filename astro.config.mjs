@@ -19,42 +19,6 @@ export default defineConfig({
       ],
       title: "Ticketon",
       favicon: "/logo.png",
-      sidebar: [
-        {
-          label: "Start Here",
-          items: [
-            {
-              label: "Introduction",
-              slug: "start/intro",
-            },
-            {
-              label: "About",
-              slug: "start/about",
-            },
-            {
-              label: "Unlimited",
-              slug: "start/unlimited",
-            },
-          ],
-        },
-        {
-          label: "Guides",
-          items: [
-            {
-              label: "Example Guide",
-              slug: "guides/example",
-            },
-          ],
-        },
-        {
-          label: "Dashboard",
-          items: [],
-        },
-        {
-          label: "Commands",
-          items: [],
-        },
-      ],
       tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 3 },
       editLink: {
         baseUrl: "https://github.com/The-LukeZ/ticketon-docs/tree/main",
@@ -75,6 +39,29 @@ export default defineConfig({
             name: "algolia-site-verification",
             content: "97B3B2D031362AC5",
           },
+        },
+      ],
+      sidebar: [
+        {
+          label: "Getting Started",
+          autogenerate: { directory: "start" },
+        },
+        {
+          label: "Commands",
+          autogenerate: { directory: "commands" },
+        },
+        {
+          label: "Guides",
+          autogenerate: { directory: "guides" },
+        },
+        {
+          label: "Dashboard",
+          autogenerate: { directory: "dashboard" },
+        },
+        {
+          label: "Changelogs",
+          autogenerate: { directory: "changelogs" },
+          collapsed: true,
         },
       ],
     }),
