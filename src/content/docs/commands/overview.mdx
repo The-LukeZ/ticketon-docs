@@ -1,0 +1,34 @@
+---
+title: Command Overview
+description: Overview of all available commands
+sidebar:
+  order: 1
+---
+
+import { LinkCard, LinkButton } from "@astrojs/starlight/components";
+
+This page provides an overview of all available commands for Ticketon.
+
+| Command          | Description                          | Documentation                                    | Default Permissions |
+| ---------------- | ------------------------------------ | ------------------------------------------------ | ------------------- |
+| `/help`          | Get help with commands               | [Help Command](/commands/help)                   | -                   |
+| `/create-ticket` | Create a new ticket                  | [Create Ticket Command](/commands/create-ticket) | -                   |
+| `/close-request` | Creates a close request for a ticket | [Close Request Command](/commands/close-request) | -                   |
+| `/ticket`        | Manage support tickets               | [Tickets Command](/commands/tickets)             | Moderate Members    |
+| `/setup`         | Get a link to the setup guide        | [Setup Guide](/start/intro)                      | Manage Server       |
+| `/config`        | Configure bot settings               | [Config Command](/commands/config)               | Manage Server       |
+| `/auditlog`      | Get a link to the audit log          | [Audit Log Command](/commands/auditlog)          | Manage Server       |
+
+## Additional Resources
+
+For more detailed information on each command, please refer to the respective documentation pages linked in the table above.
+
+If you need further assistance, feel free to join our [Discord Support Server](https://ticketon.app/discord) or visit our [Website](https://ticketon.app).
+
+<LinkCard
+  title="Discord Support Server"
+  description="Join our Discord server for support and community discussions."
+  href="https://ticketon.app/discord"
+  icon="discord"
+  target="_blank"
+/>

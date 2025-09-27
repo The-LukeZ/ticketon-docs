@@ -1,0 +1,41 @@
+---
+title: Ticket Command
+description: How to use the ticket command
+sidebar:
+  order: 4
+---
+
+This page explains how to use the `ticket` command.
+
+The `/ticket` command is **not intended for public use**. It is primarily designed for server staff to manage support tickets efficiently.
+Therefore, it requires `MODERATE_MEMBERS` permission by default.
+
+## Subcommands
+
+| Subcommand  | Description                                        |
+| ----------- | -------------------------------------------------- |
+| list        | Lists all open tickets                             |
+| claim \*    | Claims a specified ticket for the command executor |
+| unclaim \*  | Unclaims a specified ticket                        |
+| add \*      | Adds up to 5 users to the ticket                   |
+| remove \*   | Removes up to 5 users from the ticket              |
+| move \*     | Moves the ticket to a different ticket category    |
+| close \*    | Closes the ticket in which the command is executed |
+| reopen \*\* | Reopens a specified closed ticket                  |
+| delete \*\* | Deletes a specified ticket                         |
+
+\* This command is expected to be used within a ticket channel.  
+\*\* This command can be used directly within a ticket channel. When used outside a ticket channel, a ticket ID must be provided.
+
+Because most commands should be self-explanatory, only the more complex ones are explained below.
+
+### Move Ticket
+
+The `move` subcommand allows you to move a ticket to a different ticket category.
+This doesn't inherently change the parent category of the ticket channel in the server, but if the new ticket category has
+a different category for open tickets, the ticket channel will be moved to that category.
+
+After executing the command, the bot will send a confirmation message in the ticket channel that it was moved.
+Additionally, the permissions of the ticket channel will be updated to match the new staff roles (if it's not a thread ticket).
+
+---
