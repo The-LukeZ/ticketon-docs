@@ -72,7 +72,8 @@ export default defineConfig({
         {
           tag: "meta",
           attrs: {
-            "algolia-site-verification": "97B3B2D031362AC5",
+            name: "algolia-site-verification",
+            content: "97B3B2D031362AC5",
           },
         },
       ],
