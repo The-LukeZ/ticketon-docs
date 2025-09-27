@@ -46,8 +46,12 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: "Getting Started",
-          autogenerate: { directory: "start" },
+          label: "Welcome",
+          items: [
+            { label: "Getting Started", link: "/getting-started" },
+            { label: "About Ticketon", link: "/about" },
+            { label: "Unlimited", link: "/unlimited" },
+          ],
         },
         {
           label: "Commands",
