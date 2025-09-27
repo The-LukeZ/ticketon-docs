@@ -69,6 +69,12 @@ export default defineConfig({
             content: "https://docs.ticketon.app/logo.png",
           },
         },
+        {
+          tag: "meta",
+          attrs: {
+            "algolia-site-verification": "97B3B2D031362AC5",
+          },
+        },
       ],
     }),
   ],
