@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
+import docsearch from "@astrojs/starlight-docsearch";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,9 @@ export default defineConfig({
         catppuccin({
           dark: { accent: "peach", flavor: "mocha" },
           light: { accent: "peach", flavor: "latte" },
+        }),
+        docsearch({
+          clientOptionsModule: "./src/config/docsearch.ts",
         }),
       ],
       title: "Ticketon",
