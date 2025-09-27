@@ -1,9 +1,9 @@
 import type { DocSearchClientOptions } from "@astrojs/starlight-docsearch";
 
 export default {
-  appId: import.meta.env.ALGOLIA_APP_ID,
-  apiKey: import.meta.env.ALGOLIA_API_KEY,
-  indexName: import.meta.env.ALGOLIA_INDEX_NAME,
+  appId: "9SJHRRNA4A",
+  apiKey: "f210e804b71e0790940955c62fbab1ac",
+  indexName: "ticketon_docs",
   maxResultsPerGroup: 25,
   disableUserPersonalization: true,
   getMissingResultsUrl({ query }) {
