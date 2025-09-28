@@ -15,3 +15,6 @@
   vertical-align: middle;
 }
 
+hr {
+  border-bottom-color: color-mix(in oklab, var(--sl-color-accent) 70%, transparent);
+}
