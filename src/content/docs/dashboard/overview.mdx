@@ -1,0 +1,53 @@
+---
+title: Dashboard Overview
+description: Overview of the Dashboard features
+sidebar:
+  order: 1
+---
+
+import { LinkCard } from "@astrojs/starlight/components";
+import Feature from "../../../components/Feature.astro";
+
+The Dashboard provides a user-friendly interface to manage and configure various aspects of the application.
+
+## Dashboard Structure
+
+The dashboard is divided into several key sections:
+
+### User-Specific
+
+<LinkCard
+  href="/dashboard/billing"
+  title="Billing"
+  description="Manage your billing information and subscriptions."
+/>
+
+### Server Management
+
+<Feature header="Premium Management" href="/dashboard/premium">
+  Manage a server's premium subscription.
+</Feature>
+
+<Feature header="Category Configuration" href="/dashboard/categories">
+  Configure the ticket categories.
+</Feature>
+
+<Feature header="Form Management" href="/dashboard/forms">
+  Create and manage forms for user input.
+</Feature>
+
+<Feature header="Custom Messages" href="/dashboard/messages">
+  Make beautiful customized messages.
+</Feature>
+
+<Feature header="Support Schedule" href="/dashboard/schedule">
+  Configure a support schedule.
+</Feature>
+
+<Feature header="Analytics" href="/dashboard/analytics">
+  View analytics of feedback and tickets.
+</Feature>
+
+<Feature header="Audit Log" href="/dashboard/audit-log">
+  View the history of actions taken.
+</Feature>
