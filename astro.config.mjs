@@ -68,12 +68,12 @@ export default defineConfig({
           autogenerate: { directory: "commands" },
         },
         {
-          label: "Guides",
-          autogenerate: { directory: "guides" },
-        },
-        {
           label: "Dashboard",
           autogenerate: { directory: "dashboard" },
+        },
+        {
+          label: "Guides",
+          autogenerate: { directory: "guides" },
         },
         {
           label: "Changelogs",
