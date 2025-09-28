@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-import { LinkCard } from "@astrojs/starlight/components";
+import { LinkCard, Aside } from "@astrojs/starlight/components";
 import Feature from "../../../components/Feature.astro";
 
 The Dashboard provides a user-friendly interface to manage and configure various aspects of the application.
@@ -23,6 +23,12 @@ The dashboard is divided into several key sections:
 />
 
 ### Server Management
+
+<Aside type="note">
+  You must at least have the `Manage Server` permission in a server to access
+  its dashboard page. <br />
+  Advanced permission configuration is planned for a future update.
+</Aside>
 
 <Feature header="Premium Management" href="/dashboard/premium">
   Manage a server's premium subscription.
