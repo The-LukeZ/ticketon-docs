@@ -46,6 +46,13 @@ export default defineConfig({
             content: "97B3B2D031362AC5",
           },
         },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:card",
+            content: "", // Reset because of SEO issues
+          },
+        },
       ],
       sidebar: [
         {
