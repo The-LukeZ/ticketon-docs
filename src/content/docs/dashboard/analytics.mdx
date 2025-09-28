@@ -3,4 +3,34 @@ title: Analytics
 description: View a server's analytics
 sidebar:
   order: 7
+banner:
+  content: This is not implemented yet, but is planned for a future release.
 ---
+
+import { Aside } from "@astrojs/starlight/components";
+import UnlimitedBanner from "../../../components/UnlimitedBanner.astro";
+
+<UnlimitedBanner partial />
+
+| Feature            | Availability    |
+| ------------------ | --------------- |
+| Ticket Analytics   | Free, Unlimited |
+| Feedback Analytics | Unlimited       |
+
+The analytics page provides insights into the server's tickets and and feedback.
+
+## Ticket Analytics
+
+The ticket analytics section displays a chart showing the number of tickets along with some key metrics.
+
+## Feedback Analytics
+
+The feedback analytics section displays a chart showing the average feedback rating along with some key metrics.
+
+Here you can see the average rating, the total number of feedback entries, and the distribution of ratings from 1 to 5 stars, as well as the relations between ratings and staff.
+You can filter the analytics by a specific time range using the date picker at the top right of the page.
+
+<Aside type="note">
+  For the feedback-staff relation, staff must claim tickets for their feedback
+  to be counted towards them.
+</Aside>
