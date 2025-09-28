@@ -4,6 +4,8 @@ import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
 import docsearch from "@astrojs/starlight-docsearch";
 import tailwindcss from "@tailwindcss/vite";
+import starlightImageZoomPlugin from "starlight-image-zoom";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,6 +21,7 @@ export default defineConfig({
         docsearch({
           clientOptionsModule: "./src/config/docsearch.ts",
         }),
+        starlightImageZoomPlugin(),
       ],
       title: "Ticketon",
       favicon: "/logo.png",
@@ -71,6 +74,12 @@ export default defineConfig({
           collapsed: true,
         },
       ],
+    }),
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
     }),
   ],
 
