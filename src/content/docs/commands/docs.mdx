@@ -15,8 +15,11 @@ After selecting a result, the bot will provide a link to the relevant documentat
 
 The response is hidden by default, but if setting the `hidden` option to `false`, the response will be visible to everyone in the channel and the command author will be cited.
 
-import CenterH from "../../../components/CenterH.astro";
+import ImageWrapper from "../../../components/ImageWrapper.astro";
+import DocsSearchImage from "../../../assets/docs/docs-search-command.png";
 
-<CenterH class="max-w-lg">
-  ![Docs Command Response Example](../../../assets/docs/docs-search-command.png)
-</CenterH>
+<ImageWrapper
+  src={DocsSearchImage}
+  alt="Docs Command Response Example"
+  size="sm"
+/>
