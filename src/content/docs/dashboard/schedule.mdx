@@ -4,3 +4,39 @@ description: Manage a server's support schedule
 sidebar:
   order: 6
 ---
+
+import { Aside } from "@astrojs/starlight/components";
+import UnlimitedBanner from "../../../components/UnlimitedBanner.astro";
+
+<UnlimitedBanner />
+
+A server's support schedule determines when the server will be available to handle support requests.
+You can configure the support schedule to match your team's working hours, ensuring that support requests are only handled during those times.
+
+## How does a support schedule work?
+
+Each server can only have one schedule. If it's not active, the server will always be available to handle support requests.
+
+A support schedule holds daily schedules for each day of the week (Monday to Sunday). The start of the week doesn't matter -
+this would be only relevant for displaying the schedule in a more user-friendly way. However, since this project is supposed to be simple,
+the schedule is always displayed starting from Monday.
+
+A day can have up to 3 time slots. When a user tries to create a ticket, the system checks the server's
+support schedule to see if the current time falls within any of the defined time slots for that day.  
+If that is the case, it determines the next available time slot for that day and tells the user when they should try to create a ticket again.
+
+<Aside type="caution" title="Important">
+  If no time slots are defined for a day, it is considered a day off.
+</Aside>
+
+A time slot defines a specific period during which the server is available to handle support requests. A time slot is defined by a start time and an end time.
+
+You can also configure your schedule's UTC offset, so that the schedule is always interpreted in the correct timezone.
+
+## Configuring the support schedule
+
+To configure a server's support schedule, navigate to the server's settings page and click on the "Schedule" tab.
+
+Here, you can enable or disable the support schedule, set the UTC offset, and define the daily schedules for each day of the week.
+
+When defining a daily schedule, you can add up to 3 time slots for each day. Click on the "Add Time Slot" button to add a new time slot.
