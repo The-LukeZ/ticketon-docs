@@ -50,7 +50,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             name: "twitter:card",
-            content: "", // Reset because of SEO issues
+            content: "-", // Reset because of SEO issues
           },
         },
       ],
