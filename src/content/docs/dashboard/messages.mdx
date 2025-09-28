@@ -1,6 +1,46 @@
 ---
-title: Messages
+title: Custom Messages
 description: Manage a server's custom messages
 sidebar:
   order: 5
 ---
+
+import { Aside } from "@astrojs/starlight/components";
+import Feature from "../../../components/Feature.astro";
+
+Messages are a core part of how Ticketon interacts with your server. You can customize the content and layout of most
+messages sent by Ticketon to better fit your server's style and needs.
+
+## What are Custom Messages for?
+
+Custom messages can be used to:
+
+- Ticket Starter Message: The message sent in a ticket, when a user creates a ticket.
+- Panel Message: A message for instructions and button(s)/select menu(s) to create tickets.
+- Snippets: Reusable message templates for common responses or information.
+
+## Editing Messages
+
+You can edit custom messages in the [Dashboard](https://ticketon.app/dash/?next=/messages).
+Select the server you want to manage, then navigate to the "Messages" tab.
+
+## Anatomy of a Message
+
+A message is made up of a unique name (per server) and up to 40 components (Discord limit).
+
+**Ticketon exclusively uses Components V2 for its messages.**
+
+<Feature
+  header="Components V2"
+  href="/guides/components-v2"
+  cta="Learn more about Components V2"
+>
+  Discord's Message Components V2 allow you to build rich, interactive messages
+  with complex layouts. It can be quite difficult to understand at first, so
+  remember:
+</Feature>
+
+<Aside type="caution" icon="warning">
+  **Components V2 have nothing to do with embeds and work completely
+  different.**
+</Aside>
