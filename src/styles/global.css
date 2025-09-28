@@ -16,5 +16,14 @@
 }
 
 hr {
-  border-bottom-color: color-mix(in oklab, var(--sl-color-accent) 70%, transparent);
+  border-bottom-color: color-mix(
+    in oklab,
+    var(--sl-color-accent) 70%,
+    transparent
+  );
+}
+
+table thead th {
+  border-bottom: 1px solid
+    color-mix(in oklab, var(--sl-color-accent) 60%, transparent);
 }
