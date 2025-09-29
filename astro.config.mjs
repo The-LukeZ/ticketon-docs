@@ -85,6 +85,13 @@ export default defineConfig({
         Header: "./src/components/overrides/Header.astro",
         MarkdownContent: "./src/components/overrides/MarkdownContent.astro",
       },
+      social: [
+        {
+          icon: "discord",
+          href: "https://discord.gg/yd5JU8wjRx",
+          label: "Support Server",
+        },
+      ],
     }),
     sitemap({
       serialize(item) {
