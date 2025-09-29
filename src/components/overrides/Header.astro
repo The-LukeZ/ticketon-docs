@@ -4,7 +4,7 @@ import DocSearch from "@astrojs/starlight-docsearch/DocSearch.astro";
 import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
 import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
 import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
-import HeaderDropdowns from "../HeaderDropdowns.astro"; // Doesn't work either
+import HeaderLinks from "../HeaderLinks.astro";
 ---
 
 <div class="flex h-full items-center justify-between gap-4">
@@ -14,8 +14,7 @@ import HeaderDropdowns from "../HeaderDropdowns.astro"; // Doesn't work either
       <DocSearch />
     </div>
     <div id="right-group" class="hidden h-10 flex-wrap gap-x-2 overflow-hidden">
-      <a>Test</a>
-      <!-- Doesn't work -->
+      <HeaderLinks />
       <SocialIcons />
       <ThemeSelect />
       <LanguageSelect />

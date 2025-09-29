@@ -81,6 +81,10 @@ export default defineConfig({
           collapsed: true,
         },
       ],
+      components: {
+        Header: "./src/components/overrides/Header.astro",
+        MarkdownContent: "./src/components/overrides/MarkdownContent.astro",
+      },
     }),
     sitemap({
       serialize(item) {
