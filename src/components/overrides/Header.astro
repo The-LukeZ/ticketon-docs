@@ -3,7 +3,8 @@ import LanguageSelect from "@astrojs/starlight/components/LanguageSelect.astro";
 import DocSearch from "@astrojs/starlight-docsearch/DocSearch.astro";
 import SiteTitle from "@astrojs/starlight/components/SiteTitle.astro";
 import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
-import HeaderDropdowns from "../HeaderDropdowns.astro";
+import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
+import HeaderDropdowns from "../HeaderDropdowns.astro"; // Doesn't work either
 ---
 
 <div class="flex h-full items-center justify-between gap-4">
@@ -14,42 +15,44 @@ import HeaderDropdowns from "../HeaderDropdowns.astro";
     </div>
     <div id="right-group" class="hidden h-10 flex-wrap gap-x-2 overflow-hidden">
       <a>Test</a>
+      <!-- Doesn't work -->
+      <SocialIcons />
       <ThemeSelect />
       <LanguageSelect />
     </div>
   </div>
+
+  <style>
+    :global(.site-title) {
+      gap: 0.5rem;
+      min-width: fit-content;
+      overflow: none;
+
+      span {
+        color: var(--sl-color-white);
+      }
+
+      img {
+        height: 1.25rem;
+      }
+    }
+
+    #social-icons {
+      --sl-icon-color: var(--sl-color-white);
+    }
+
+    :global(starlight-theme-select > label > select) {
+      line-height: 1.25rem;
+    }
+
+    @media screen and (min-width: 800px) {
+      #right-group {
+        display: flex;
+      }
+
+      #docsearch {
+        width: 20rem;
+      }
+    }
+  </style>
 </div>
-
-<style>
-  :global(.site-title) {
-    gap: 0.5rem;
-    min-width: fit-content;
-    overflow: none;
-
-    span {
-      color: var(--sl-color-white);
-    }
-
-    img {
-      height: 1.25rem;
-    }
-  }
-
-  #social-icons {
-    --sl-icon-color: var(--sl-color-white);
-  }
-
-  :global(starlight-theme-select > label > select) {
-    line-height: 1.25rem;
-  }
-
-  @media screen and (min-width: 800px) {
-    #right-group {
-      display: flex;
-    }
-
-    #docsearch {
-      width: 20rem;
-    }
-  }
-</style>
