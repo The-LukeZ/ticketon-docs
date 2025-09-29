@@ -24,6 +24,12 @@ export default defineConfig({
         starlightImageZoomPlugin(),
       ],
       title: "Ticketon",
+      logo: {
+        src: "./public/logo.png",
+        alt: "Ticketon Logo",
+        replacesTitle: false,
+      },
+      credits: true,
       favicon: "/logo.png",
       tableOfContents: { minHeadingLevel: 1, maxHeadingLevel: 3 },
       editLink: {
