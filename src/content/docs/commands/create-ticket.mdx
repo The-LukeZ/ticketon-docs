@@ -7,7 +7,6 @@ sidebar:
 
 import { Aside } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
-import DisableCreateTicketImage from "../../../assets/docs/disable-command-for-everyone.png";
 
 The `/create-ticket` command allows users to create a new support ticket in the server without the need to use buttons/select menus.
 
@@ -24,10 +23,9 @@ When a user executes the `/create-ticket` command, the bot handles it like the u
 
 To disable the `/create-ticket` command usage, you have to go in the **Server Settings** > **Integrations** > **Ticketon** > `/create-ticket` and disallow the usage for `@everyone`.
 
-<ImageWrapper
-  src={DisableCreateTicketImage}
-  alt="Disable Create Ticket Command"
-  size="md"
-/>
+<ImageWrapper size="md">
+  ![Disable Create Ticket
+  Command](../../../assets/docs/disable-command-for-everyone.png)
+</ImageWrapper>
 
 <Aside type="tip">You can manage every command you want this way.</Aside>

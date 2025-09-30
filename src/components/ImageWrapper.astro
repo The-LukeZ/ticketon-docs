@@ -1,28 +1,31 @@
 ---
-import { Image } from "astro:assets";
-
 interface Props {
-  src: ImageMetadata; // Support imported images or URL strings
-  alt: string;
-  size?: "xs" | "sm" | "md" | "lg" | "full";
-  width?: number; // Optional: Pass for sizing if not inferable
+  size?: "sm" | "md" | "lg" | "xl" | "full";
 }
 
-const { src, alt, size = "md", width = 800 } = Astro.props; // Default width for optimization
+const { size = "md" } = Astro.props; // Default width for optimization
 
 const sizeClasses = (_size: Props["size"] = "md") =>
   ({
-    xs: "max-w-xs",
     sm: "max-w-sm",
     md: "max-w-md",
     lg: "max-w-lg",
+    xl: "max-w-xl",
     full: "max-w-full",
   })[_size];
 ---
 
-<Image
-  src={src}
-  alt={alt}
-  width={width}
-  class={`mx-auto rounded-lg shadow-md ${sizeClasses(size)}`}
-/>
+<div
+  class={`mx-auto overflow-clip image-wrapper ${sizeClasses(size)}`}
+>
+  <slot />
+</div>
+
+<style>
+  .image-wrapper img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+</style>
