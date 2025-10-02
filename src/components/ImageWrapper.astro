@@ -1,9 +1,10 @@
 ---
 interface Props {
   size?: "sm" | "md" | "lg" | "xl" | "full";
+  class?: string;
 }
 
-const { size = "md" } = Astro.props; // Default width for optimization
+const { size = "md", class: customClasses = "" } = Astro.props; // Default width for optimization
 
 const sizeClasses = (_size: Props["size"] = "md") =>
   ({
@@ -16,7 +17,7 @@ const sizeClasses = (_size: Props["size"] = "md") =>
 ---
 
 <div
-  class={`mx-auto overflow-clip image-wrapper ${sizeClasses(size)}`}
+  class={`mx-auto overflow-clip image-wrapper ${sizeClasses(size)} ${customClasses}`.trim()}
 >
   <slot />
 </div>
