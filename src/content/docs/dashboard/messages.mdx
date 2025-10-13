@@ -5,8 +5,10 @@ sidebar:
   order: 5
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, Icon } from "@astrojs/starlight/components";
+import AnchorHeading from "@astrojs/starlight/components/AnchorHeading.astro";
 import Feature from "../../../components/Feature.astro";
+import ArrowInline from "../../../components/ArrowInline.astro";
 
 Messages are a core part of how Ticketon interacts with your server. You can customize the content and layout of most
 messages sent by Ticketon to better fit your server's style and needs.
@@ -44,3 +46,41 @@ A message is made up of a unique name (per server) and up to 40 components (Disc
   **Components V2 have nothing to do with embeds and work completely
   different.**
 </Aside>
+
+## Variables
+
+Variables are special placeholders that get replaced with dynamic content when the message is sent. However, they are different for each context.  
+Some variables are given every time.
+
+Variables are wrapped in curly braces `{}`.  
+Example: `{username}`
+
+### Common Variables
+
+| Variable          | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| `{usermention}`   | Mentions the user who triggered the message or created the ticket.  |
+| `{username}`      | The username of the user who triggered the message.                 |
+| `{userid}`        | The ID of the user who triggered the message or created the ticket. |
+| `{servername}`    | The name of the server.                                             |
+| `{serverid}`      | The ID of the server.                                               |
+| `{servericonurl}` | The icon URL of the server. Can be empty if the server has no icon. |
+
+### Variables for Messages in Tickets
+
+These variables are only available in messages that are sent in the context of a ticket. This includes the Ticket Starter Message and Custom Messages sent in tickets.
+
+| Variable         | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| `{ticketid}`     | The ID of the ticket.                            |
+| `{ticketindex}`  | The index of the ticket.                         |
+| `{categoryname}` | The name of the category the ticket belongs to.  |
+| `{usermention}`  | Mentions the user who created the ticket.        |
+| `{username}`     | The username of the user who created the ticket. |
+| `{userid}`       | The ID of the user who created the ticket.       |
+
+#### Starter Message Variables
+
+If a ticket was created using a form, you can use the Custom IDs of the form fields as variables. However, you need to wrap them in curly braces.
+
+Example: `textinput-1` <ArrowInline /> `{textinput-1}`
