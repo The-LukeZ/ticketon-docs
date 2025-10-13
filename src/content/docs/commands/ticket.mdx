@@ -2,8 +2,10 @@
 title: Ticket Command
 description: How to use the ticket command
 sidebar:
-  order: 8
+  order: 7
 ---
+
+import ImageWrapper from "../../../components/ImageWrapper.astro";
 
 This page explains how to use the `ticket` command.
 
@@ -12,19 +14,21 @@ Therefore, it requires `Moderate Members` permission by default.
 
 ## Subcommands
 
-| Subcommand  | Description                                         |
-| ----------- | --------------------------------------------------- |
-| list        | Lists all open tickets                              |
-| claim \*    | Claims a specified ticket for the command executor  |
-| unclaim \*  | Unclaims a specified ticket                         |
-| add \*      | Adds up to 5 users to the ticket                    |
-| remove \*   | Removes up to 5 users from the ticket               |
-| transfer \* | Transfers the ticket to a different ticket category |
-| close \*    | Closes the ticket in which the command is executed  |
-| reopen \*\* | Reopens a specified closed ticket                   |
-| delete \*\* | Deletes a specified ticket                          |
-| close-all   | Closes all open tickets in the server               |
-| delete-all  | Deletes all closed tickets in the server            |
+| Subcommand              | Description                                         |
+| ----------------------- | --------------------------------------------------- |
+| list                    | Lists all open tickets                              |
+| claim \*                | Claims a specified ticket for the command executor  |
+| unclaim \*              | Unclaims a specified ticket                         |
+| add \*                  | Adds up to 5 users to the ticket                    |
+| remove \*               | Removes up to 5 users from the ticket               |
+| transfer \*             | Transfers the ticket to a different ticket category |
+| close-request create \* | Creates a close request for the ticket              |
+| close-request revoke \* | Revokes an existing close request for the ticket    |
+| close \*                | Closes the ticket in which the command is executed  |
+| reopen \*\*             | Reopens a specified closed ticket                   |
+| delete \*\*             | Deletes a specified ticket                          |
+| close-all               | Closes all open tickets in the server               |
+| delete-all              | Deletes all closed tickets in the server            |
 
 \* This command is expected to be used within a ticket channel.  
 \*\* This command can be used directly within a ticket channel. When used outside a ticket channel, a ticket ID must be provided.
@@ -39,6 +43,47 @@ a different category for open tickets, the ticket channel will be moved to that 
 
 After executing the command, the bot will send a confirmation message in the ticket channel that it was moved.
 Additionally, the permissions of the ticket channel will be updated to match the new staff roles (if it's not a thread ticket).
+
+### Close Requests
+
+A close request can be created by staff and the ticket author.
+
+#### By Staff
+
+Staff can use `/ticket close-request create` to create a close request for the ticket.
+
+When a staff member creates a close request, the user is asked if they have further questions or all issues have been resolved.
+
+Staff can also provide an **optional reason** for closing the ticket and an **optional close delay**.
+
+Staff can revoke a close request if they change their mind before the ticket is closed.
+
+#### By Ticket Author
+
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4">
+
+<div>
+
+The ticket author cannot use `/ticket close-request create` directly. Instead, they can have to select the "Close Request" from the ticket message menu.
+
+When the ticket author creates a close request, staff are not pinged, and the author **has** to provide a reason for closing the ticket.
+
+The author cannot revoke a close request once created. Staff has to take action on the close request.
+
+</div>
+
+<ImageWrapper size="sm">
+  ![Ticket Message
+  Menu](../../../assets/docs/create-close-request-from-select.webp)
+</ImageWrapper>
+
+</div>
+
+#### Revoke a Close Request
+
+Staff can revoke a close request if they change their mind before the ticket is closed.
+
+To do that the command `/ticket close-request revoke` has to be executed in the ticket channel.
 
 ### Close All Tickets
 
