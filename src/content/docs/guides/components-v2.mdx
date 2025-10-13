@@ -59,10 +59,13 @@ These components allow users to interact with the bot. With the exception of but
 
 Buttons trigger actions when clicked. They must be placed in an `Action Row` or used as an accessory in a `Section`.
 
-Button in Ticketon server two purposes:
+Buttons in Ticketon can have different actions:
 
-1. **Link Button**: Opens a URL in the user's browser.
-2. **Create Ticket Button**: Starts the ticket creation process for the configured category.
+1. **Link**: Opens a URL in the user's browser.
+2. **Create Ticket**: Starts the ticket creation process for the configured category.
+3. **Close Ticket**: Closes the ticket (only usable in a ticket channel).
+4. **Reopen Ticket**: Reopens a closed ticket (only usable in a closed ticket channel).
+5. **Delete Ticket**: Deletes the ticket channel and marks the ticket as deleted (only usable in a closed ticket channel).
 
 ### Category Selection Menu
 
