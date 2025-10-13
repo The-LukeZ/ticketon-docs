@@ -15,11 +15,11 @@
     "@astrojs/starlight-docsearch": "^0.6.0",
     "@astrojs/starlight-tailwind": "^4.0.1",
     "@catppuccin/starlight": "^1.0.2",
-    "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.14.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.4",
     "sharp": "^0.34.4",
-    "starlight-image-zoom": "^0.13.0",
-    "tailwindcss": "^4.1.13"
+    "starlight-image-zoom": "^0.13.1",
+    "tailwindcss": "^4.1.14"
   },
   "packageManager": "pnpm@10.17.1"
 }
