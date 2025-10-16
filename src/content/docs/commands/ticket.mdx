@@ -46,44 +46,13 @@ Additionally, the permissions of the ticket channel will be updated to match the
 
 ### Close Requests
 
-A close request can be created by staff and the ticket author.
-
-#### By Staff
-
 Staff can use `/ticket close-request create` to create a close request for the ticket.
 
-When a staff member creates a close request, the user is asked if they have further questions or all issues have been resolved.
+When a staff member creates a close request, the ticket author is asked if they have further questions or all issues have been resolved.
 
 Staff can also provide an **optional reason** for closing the ticket and an **optional close delay**.
 
-Staff can revoke a close request if they change their mind before the ticket is closed.
-
-#### By Ticket Author
-
-<div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4">
-
-<div>
-
-The ticket author cannot use `/ticket close-request create` directly. Instead, they can have to select the "Close Request" from the ticket message menu.
-
-When the ticket author creates a close request, staff are not pinged, and the author **has** to provide a reason for closing the ticket.
-
-The author cannot revoke a close request once created. Staff has to take action on the close request.
-
-</div>
-
-<ImageWrapper size="sm">
-  ![Ticket Message
-  Menu](../../../assets/docs/create-close-request-from-select.webp)
-</ImageWrapper>
-
-</div>
-
-#### Revoke a Close Request
-
-Staff can revoke a close request if they change their mind before the ticket is closed.
-
-To do that the command `/ticket close-request revoke` has to be executed in the ticket channel.
+Staff can revoke a close request if they change their mind before the ticket is closed by executing the `/ticket close-request revoke` command in the ticket channel.
 
 ### Close All Tickets
 
