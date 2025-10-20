@@ -1,0 +1,9 @@
+---
+title: Changelog 2025
+description: A summary of changes made to the project in 2025.
+---
+
+## 20.10.2025
+
+- Fixed a bug where the ticket channel would be publicly visible to all users.
+  - The underlying issue was that the permission overwrites for the ticket channel would set the `VIEW_CHANNEL` permission to `false` but the overwrite type was set to `member` instead of `role`, causing the permission to not apply correctly.
