@@ -59,6 +59,13 @@ export default defineConfig({
             content: "-", // Reset because of SEO issues
           },
         },
+        {
+          tag: "meta",
+          attrs: {
+            name: "theme-color",
+            content: "#21aaff",
+          }
+        }
       ],
       sidebar: [
         {
