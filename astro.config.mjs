@@ -64,8 +64,8 @@ export default defineConfig({
           attrs: {
             name: "theme-color",
             content: "#21aaff",
-          }
-        }
+          },
+        },
       ],
       sidebar: [
         {
@@ -90,8 +90,8 @@ export default defineConfig({
         },
         {
           label: "Changelogs",
-          autogenerate: { directory: "changelogs" },
           collapsed: true,
+          items: [{ label: "2025", link: "/changelogs/2025" }],
         },
       ],
       components: {
