@@ -9,7 +9,8 @@ import { Aside } from "@astrojs/starlight/components";
 
 ### Feedback System
 
-Added a comprehensive feedback management system that allows server administrators to view and analyze user feedback about their support ticket experience.
+- Added a comprehensive feedback management system that allows server administrators to view and analyze user feedback about their support ticket experience.
+  - The backend uses MongoDB aggregation to join feedback documents with their corresponding tickets, allowing filtering by category while maintaining performance. Date range filters support ISO timestamps, and rating filters accept comma-separated values for multi-select functionality.
 
 <Aside type="caution" title="Important">
   It is very likely that this page will be turned into a tickets page in the
@@ -17,15 +18,6 @@ Added a comprehensive feedback management system that allows server administrato
   information about tickets themselves. Not sure how this will look yet.
 </Aside>
 
-#### Features
-
-- **Multi-Filter Search**: Filter feedback by category, ticket ID, user ID, and star rating
-- **Flexible Pagination**: Customize results per page (1-100) with easy page navigation
-- **Visual Feedback Display**: Grid-based card layout showing key feedback metrics at a glance
-- **Detailed View**: Modal dialog for viewing complete feedback details
-- **Real-time Statistics**: Live count of total feedback and current page range
-
-The backend uses MongoDB aggregation to join feedback documents with their corresponding tickets, allowing filtering by category while maintaining performance. Date range filters support ISO timestamps, and rating filters accept comma-separated values for multi-select functionality.
 
 ## 21.10.2025
 
