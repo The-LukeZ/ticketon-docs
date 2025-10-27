@@ -1,11 +1,15 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import catppuccin from "@catppuccin/starlight";
-import docsearch from "@astrojs/starlight-docsearch";
 import tailwindcss from "@tailwindcss/vite";
-import starlightImageZoomPlugin from "starlight-image-zoom";
+
+import docsearch from "@astrojs/starlight-docsearch";
 import sitemap from "@astrojs/sitemap";
+import catppuccin from "@catppuccin/starlight";
+import starlightImageZoomPlugin from "starlight-image-zoom";
+import starlightLinksValidator from "starlight-links-validator";
+import starlightGitHubAlerts from "starlight-github-alerts";
+import starlightContextualMenu from "starlight-contextual-menu";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,6 +26,13 @@ export default defineConfig({
           clientOptionsModule: "./src/config/docsearch.ts",
         }),
         starlightImageZoomPlugin(),
+        starlightLinksValidator(),
+        starlightGitHubAlerts(),
+        starlightContextualMenu({
+          actions: ["copy", "view", "chatgpt", "claude", "grok"],
+          hideMainActionLabel: true,
+          injectMarkdownRoutes: true,
+        }),
       ],
       title: "Ticketon",
       logo: {
