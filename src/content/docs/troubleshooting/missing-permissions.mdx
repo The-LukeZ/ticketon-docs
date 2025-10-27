@@ -1,0 +1,56 @@
+---
+title: "Missing Permissions"
+description: "How to resolve missing permissions errors when creating tickets."
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import ImageWrapper from "../../../components/ImageWrapper.astro";
+
+This is what you might see if you try to create a ticket:
+
+<ImageWrapper size="xl">
+  ![Missing Permissions Error
+  Example](../../../assets/docs/errors/missing-permissions-for-ticket-create.png)
+</ImageWrapper>
+
+<Tabs>
+  <TabItem label="Channel Mode">
+    **Check Bot Permissions for the Category**: Ticketon follows the principle of least privilege. You have two options:
+
+    #### Option 1: Add Ticketon to the Category (Recommended)
+    - Add the Ticketon role (or bot user) to the category where tickets are created
+    - The bot will inherit permissions from the server-level role settings
+    - This is the most secure approach
+
+    #### Option 2: Grant Manage Server Permission
+
+    - Give the Ticketon role the "Manage Server" permission
+    - This grants the bot broader access across the server
+    - Only use this if you fully trust the bot
+
+    ##### Required permissions (either through category or server role):
+    - Manage Server **(OPTIONAL, only it you trust the bot fully)**
+    - Manage Channels
+    - Manage Permissions
+    - View Channel
+    - Send Messages
+    - Read Message History
+    - Embed Links
+    - Attach Files
+    - Use External Emojis
+
+  </TabItem>
+  <TabItem label="Threads Mode">
+    **Check Bot Permissions for the Channel**: Ensure the bot has the following permissions in the channel where tickets are created:
+
+        - Create Private Threads
+        - Manage Threads
+        - View Channel
+        - Send Messages
+        - Read Message History
+        - Embed Links
+        - Attach Files
+        - Use External Emojis
+
+  </TabItem>
+</Tabs>
