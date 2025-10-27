@@ -100,6 +100,10 @@ export default defineConfig({
           autogenerate: { directory: "guides" },
         },
         {
+          label: "Troubleshooting",
+          autogenerate: { directory: "troubleshooting" },
+        },
+        {
           label: "Changelogs",
           collapsed: true,
           // items: [{ label: "2025", link: "/changelogs/2025" }],
