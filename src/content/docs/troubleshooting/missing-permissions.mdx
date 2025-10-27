@@ -3,7 +3,7 @@ title: "Missing Permissions"
 description: "How to resolve missing permissions errors when creating tickets."
 ---
 
-import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
 
 This is what you might see if you try to create a ticket:
@@ -29,7 +29,6 @@ This is what you might see if you try to create a ticket:
     - Only use this if you fully trust the bot
 
     ##### Required permissions (either through category or server role):
-    - Manage Server **(OPTIONAL, only it you trust the bot fully)**
     - Manage Channels
     - Manage Permissions
     - View Channel
@@ -43,14 +42,20 @@ This is what you might see if you try to create a ticket:
   <TabItem label="Threads Mode">
     **Check Bot Permissions for the Channel**: Ensure the bot has the following permissions in the channel where tickets are created:
 
-        - Create Private Threads
-        - Manage Threads
-        - View Channel
-        - Send Messages
-        - Read Message History
-        - Embed Links
-        - Attach Files
-        - Use External Emojis
+    - Manage Channels
+    - Manage Permissions
+    - View Channel
+    - Send Messages
+    - Read Message History
+    - Embed Links
+    - Attach Files
+    - Use External Emojis
 
   </TabItem>
 </Tabs>
+
+<Aside type="caution">
+  You can give the bot's role the **Administrator** or **Manage Server**
+  permission to bypass this issue, but this is not recommended for security
+  reasons.
+</Aside>
