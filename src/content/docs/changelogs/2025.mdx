@@ -11,7 +11,7 @@ import ImageWrapper from "../../../components/ImageWrapper.astro";
 
 ## 30.10.2025
 
-## Localization Update!
+### Localization Update!
 
 The full bot is now localized! All bot messages and interactions are available in English (default) and German.
 
@@ -21,6 +21,16 @@ There is a difference between the client-localization and the server-localizatio
 - Server-localization is determined by the language set in the dashboard for your server (on the overview page).
 
 You can assume that every **public message** uses **server-scoped localization**, while **interactions** (commands, components) use **client-localization**.
+
+### Bug Fixes
+
+- Fixed an issue where some messages were not being localized correctly.
+- Fixed an issue where the bot would not clear the locale cache correctly, causing incorrect messages to be sent for a short period of time after changing the server language.
+- Fixed a major issue where the dashboard would not be able to retrieve user mentions. This was due to a Docker misconfiguration that prevented the website from reaching the bot's API.
+
+### Additions
+
+- Added a more detailed close DM message, which includes information about the ticket
 
 ## 28.10.2025
 
