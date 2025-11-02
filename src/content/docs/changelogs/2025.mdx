@@ -9,6 +9,21 @@ tableOfContents:
 import { Aside } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
 
+## 02.11.2025
+
+Big Fixes!
+
+Today I fixed some major issues:
+
+1. Forms with descriptions might not have been working.
+
+   - This was due to Discord not accepting empty strings as valid description values but wanting `undefined` instead.
+
+2. Closing your own ticket did not work, even though you were a manager.
+
+   - This was due to a logic error in the permission checking code. It checked if you were the ticket owner first, and if you were, it would not check for manager permissions.  
+     Now it checks for manager permissions first, and if you are a manager, you can close your own ticket.
+
 ## 30.10.2025
 
 ### Localization Update!
