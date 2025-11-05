@@ -12,6 +12,7 @@ This page provides a comprehensive overview of all features available in Ticketo
 ## Core Ticketing Features
 
 ### Ticket Management
+
 - **Create Tickets**: Users can create support tickets via buttons, select menus, or the `/create-ticket` command
 - **Ticket Categories**: Organize tickets into customizable categories (3 on Free, unlimited on Unlimited plan)
 - **Thread-based Tickets**: Option to use Discord threads instead of channels for tickets
@@ -23,36 +24,40 @@ This page provides a comprehensive overview of all features available in Ticketo
 - **Close Requests**: Staff can create close requests asking users if their issues are resolved
 - **Ticket Reopening**: Reopen closed tickets
 - **Ticket Deletion**: Delete closed tickets
-- **Bulk Operations**: 
+- **Bulk Operations**:
   - Close all open tickets at once
   - Delete all closed tickets at once
 - **Auto Threads**: Automatically create private staff threads in new tickets
 - **Close Behavior**: Configure whether tickets are closed or deleted when resolved
 
 ### User Management
-- **Blacklist System**: 
+
+- **Blacklist System**:
   - Add users to blacklist to prevent ticket creation
   - Remove users from blacklist
   - Check if a user is blacklisted
 - **Open Tickets for Others**: Staff can open tickets on behalf of other users with custom starter messages
 
 ### Permissions & Roles
+
 - **Staff Roles**: Assign specific roles that can manage tickets in each category
 - **Manager Roles**: Roles that can manage unclaimed tickets
 - **Manager Bypass**: Allow managers to bypass claim restrictions
-- **Role-based Access**: 
+- **Role-based Access**:
   - Whitelist mode: Only specified roles can create tickets
   - Blacklist mode: Specified roles cannot create tickets
 
 ## Commands
 
 ### User Commands
+
 - `/help` - Get list of all available commands
 - `/create-ticket` - Create a new ticket without using buttons/menus
 - `/premium` - Check premium status of the server
 - `/docs` - Search documentation using integrated search
 
 ### Staff Commands (Moderate Members permission)
+
 - `/ticket list` - List all open tickets
 - `/ticket claim` - Claim a ticket
 - `/ticket unclaim` - Unclaim a ticket
@@ -72,6 +77,7 @@ This page provides a comprehensive overview of all features available in Ticketo
 - `/blacklist check` - Check if user is blacklisted
 
 ### Management Commands
+
 - `/message` - Send custom message to a channel (Manage Messages permission)
 - `/setup` - Get link to setup guide (Manage Server permission)
 - `/config` - Configure bot settings (Manage Server permission)
@@ -79,6 +85,7 @@ This page provides a comprehensive overview of all features available in Ticketo
 ## Dashboard Features
 
 ### Category Configuration
+
 - Name, description, and emoji customization
 - Active/inactive status toggle
 - Form association for data collection
@@ -91,6 +98,7 @@ This page provides a comprehensive overview of all features available in Ticketo
 - Per-user ticket limits
 
 ### Forms System
+
 - **Form Creation**: Create custom forms (3 on Free, unlimited on Unlimited plan)
 - **Form Fields**: Up to 5 components per form
 - **Field Types**:
@@ -101,7 +109,7 @@ This page provides a comprehensive overview of all features available in Ticketo
   - Role Select Menu
   - Channel Select Menu
   - Mentionable Select Menu
-- **Field Configuration**: 
+- **Field Configuration**:
   - Custom IDs for variable reference
   - Labels, descriptions, placeholders
   - Required/optional settings
@@ -110,6 +118,7 @@ This page provides a comprehensive overview of all features available in Ticketo
   - Default values for text inputs
 
 ### Custom Messages
+
 - **Message Types**:
   - Panel Messages (for ticket creation)
   - Starter Messages (initial ticket message)
@@ -135,7 +144,7 @@ This page provides a comprehensive overview of all features available in Ticketo
   - Common: `{usermention}`, `{username}`, `{userid}`, `{servername}`, `{serverid}`, `{servericonurl}`
   - Ticket-specific: `{ticketid}`, `{ticketindex}`, `{categoryname}`
   - Form field values: `{custom-id}` from form inputs
-- **Message Sharing**: 
+- **Message Sharing**:
   - Share messages with others via unique URLs
   - Password protection for shared messages
   - Import shared messages from community
@@ -144,27 +153,29 @@ This page provides a comprehensive overview of all features available in Ticketo
 
 ### Analytics
 
-<Aside type="note">
-  Some analytics features require the Unlimited plan.
-</Aside>
+<Aside type="note">Some analytics features require the Unlimited plan.</Aside>
 
 #### Core Metrics (Free & Unlimited)
+
 - Total, open, closed, and deleted ticket counts
 - Average response time
 - Average resolution time
 - Resolution rate
 
 #### Ticket Volume (Free & Unlimited)
+
 - Daily ticket volume by status
 - Visual trend charts
 - Weekly comparisons
 
 #### Category Performance (Free & Unlimited)
+
 - Ticket count per category
 - Resolution time per category
 - Satisfaction rating per category
 
 #### Advanced Analytics (Unlimited Only)
+
 - **Form Usage**: Submission counts, most used forms, usage by category
 - **Response & Resolution Times**: Average vs. median times, category breakdowns
 - **Feedback Statistics**: Total feedbacks, average ratings, rating distribution, recent comments
@@ -172,11 +183,8 @@ This page provides a comprehensive overview of all features available in Ticketo
 - **User Insights**: Unique users, recurring users, new users, top users, user distribution
 - **Staff Performance**: Tickets handled, resolution times, resolution rates, satisfaction ratings
 
-#### Time Ranges
-- 7 days, 30 days, 90 days, 180 days, 1 year, all time
-- Data updated daily at midnight UTC
-
 ### Audit Log
+
 - Track all bot-related activities
 - **Logged Events**:
   - Ticket creation, closing, deletion
@@ -187,14 +195,15 @@ This page provides a comprehensive overview of all features available in Ticketo
 - Detailed action history with timestamps
 
 ### Transcripts
+
 - Automatic generation when tickets close
 - Complete message history with timestamps
 - Attachment preservation
 - Designated channel for record-keeping
-- **Transcript Privacy Modes**: 
+- **Transcript Privacy Modes**:
   - Private (staff only)
   - Public (also sent to user)
-- **Transcript URLs**: 
+- **Transcript URLs**:
   - 24-hour validity
   - Unique, unguessable IDs
   - Dynamic generation
@@ -205,6 +214,7 @@ This page provides a comprehensive overview of all features available in Ticketo
   - Prevents transcript size limitations
 
 ### Support Schedule (Unlimited Only)
+
 - Configure server availability hours
 - Daily schedules for each day of the week
 - Up to 3 time slots per day
@@ -213,18 +223,20 @@ This page provides a comprehensive overview of all features available in Ticketo
 - Day-off support (no time slots = unavailable)
 
 ### Premium Management
+
 - View premium/unlimited subscription status
 - Manage subscriptions (for customers)
 - Next payment/expiration dates
 - Direct links to billing portal
 
 ### Custom Branding (Unlimited Only)
+
 - **Bot Avatar**: Custom avatar per server
 - **Bot Banner**: Custom banner image
 - **Bot Bio**: Custom "About Me" text
-- **Bot Nickname**: Change via Discord server settings
 
 ### Global Server Settings
+
 - **Language**: English (en) or German (de) for public bot messages
 - **Manager Roles**: Assign roles that can manage unclaimed tickets
 - **Manager Bypass**: Toggle whether managers can bypass claim restrictions
@@ -233,95 +245,54 @@ This page provides a comprehensive overview of all features available in Ticketo
 ## Additional Features
 
 ### Localization
+
 - **Client Localization**: Based on user's Discord language setting (commands/components)
 - **Server Localization**: Based on dashboard setting (public bot messages)
 - Currently supports: English, German
 
 ### Permission System
+
 - Granular command permissions via Discord's integration settings
 - Role-based access control for categories
 - Staff role configuration per category
 - Manager role system for cross-category management
 
-### User Reporting System
-- Create custom user report forms
-- User selection fields
-- Evidence collection (message links)
-- Reason documentation
-- Dedicated report categories
-- Staff notification system
+## Feedback Collection (Unlimited Only)
 
-### Feedback Collection (Unlimited Only)
 - Post-ticket satisfaction surveys
 - 1-5 star rating system
 - Optional comment collection
 - Analytics integration
 - Category-specific feedback tracking
 
-### Automation Features (Unlimited - In Development)
+## Automation Features (Unlimited - In Development)
+
 - Automated ticket workflows
 - Scheduled actions
-- Custom triggers and responses
 
 ## Free vs. Unlimited Plan
 
-| Feature | Free Plan | Unlimited Plan |
-|---------|-----------|----------------|
-| **Categories** | 3 | Unlimited (50) |
-| **Forms** | 3 | Unlimited (100) |
-| **Messages** | 9 | Unlimited (200) |
-| **Audit Log Retention** | 30 Days | 30 Days |
-| **Support Schedule** | ❌ | ✅ |
-| **Automation Features** | ❌ | ✅ (In Development) |
-| **Feedback Collection** | ❌ | ✅ |
-| **Preserve Transcript Images** | ❌ | ✅ |
-| **Base Analytics** | ✅ | ✅ |
-| **Advanced Analytics** | ❌ | ✅ |
-| **Custom Avatar** | ❌ | ✅ |
-| **Custom Banner** | ❌ | ✅ |
-| **Custom Bio** | ❌ | ✅ |
+| Feature                        | Free Plan | Unlimited Plan      |
+| ------------------------------ | --------- | ------------------- |
+| **Categories**                 | 3         | Unlimited (50)      |
+| **Forms**                      | 3         | Unlimited (100)     |
+| **Messages**                   | 9         | Unlimited (200)     |
+| **Audit Log Retention**        | 30 Days   | 30 Days             |
+| **Support Schedule**           | ❌        | ✅                  |
+| **Automation Features**        | ❌        | ✅ (In Development) |
+| **Feedback Collection**        | ❌        | ✅                  |
+| **Preserve Transcript Images** | ❌        | ✅ (In Development) |
+| **Base Analytics**             | ✅        | ✅                  |
+| **Advanced Analytics**         | ❌        | ✅                  |
+| **Custom Avatar**              | ❌        | ✅                  |
+| **Custom Banner**              | ❌        | ✅                  |
+| **Custom Bio**                 | ❌        | ✅                  |
 
 ## Discord Integration
 
 ### Component Support
+
 - Exclusive use of Discord Components V2
 - No mixing with legacy embeds
 - Modern, interactive message layouts
 - Rich content presentation
-
-### Permission Requirements
-Minimum recommended permissions:
-- View Channels
-- Send Messages
-- Embed Links
-- Attach Files
-- Manage Channels (for ticket creation)
-- Manage Roles (for role assignment)
-- Manage Permissions (for ticket privacy)
-- Read Message History
-
-### Channel Types
-- Text channels for tickets
-- Thread-based tickets
-- Category channels for organization
-- Notification channels for thread tickets
-
-## Best Practices & Guides
-
-### Setup Guides
-- Quick start checklist
-- Category configuration guide
-- Panel message creation
-- Form setup tutorials
-
-### Management Guides
-- User report system setup
-- String select menus in forms
-- Components V2 usage
-- Subscription management
-
-### Troubleshooting
-- Missing permissions guide
-- Common setup issues
-- Panel deployment help
-- Command registration issues
