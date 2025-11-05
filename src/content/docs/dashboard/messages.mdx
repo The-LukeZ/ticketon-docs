@@ -5,10 +5,11 @@ sidebar:
   order: 6
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, Icon } from "@astrojs/starlight/components";
 import AnchorHeading from "@astrojs/starlight/components/AnchorHeading.astro";
 import Feature from "../../../components/Feature.astro";
 import ArrowInline from "../../../components/ArrowInline.astro";
+import ImageWrapper from "../../../components/ImageWrapper.astro";
 
 Messages are a core part of how Ticketon interacts with your server. You can customize the content and layout of most
 messages sent by Ticketon to better fit your server's style and needs.
@@ -25,6 +26,41 @@ Custom messages can be used to:
 
 You can edit custom messages in the [Dashboard](https://ticketon.app/dash/?next=/messages).
 Select the server you want to manage, then navigate to the "Messages" tab.
+
+## Message Sharing
+
+You can share your custom messages with others and import shared messages from the community to save time and inspire your setups.
+
+### Sharing Messages
+
+In the message editor, click the blue settings button <Icon name="setting" size="1.1.rem" class="inline-block text-blue-500" />
+next to the message name to open the settings modal.
+Toggle sharing on or off, and optionally enable password protection (a password will be generated automatically).
+When enabled, a unique URL is created for sharing.
+
+<ImageWrapper>
+  ![Message Settings
+  Modal](../../../assets/docs/changelogs/message-share-modal.png)
+</ImageWrapper>
+
+### Importing Shared Messages
+
+On the Custom Messages page, click the green download button <Icon name="download" size="1.1.rem" class="inline-block text-green-500" />
+next to "Create New Message" to open the import modal. Paste the shared URL and enter the password if required.
+
+<ImageWrapper>
+  ![Import Message
+  Modal](../../../assets/docs/changelogs/message-share-import.png)
+</ImageWrapper>
+
+### Message Preview
+
+Shared messages can be previewed in read-only mode via the generated URL. Note that the preview does not render the full Discord layout.
+
+<ImageWrapper>
+  ![Message Preview
+  Modal](../../../assets/docs/changelogs/message-share-preview.png)
+</ImageWrapper>
 
 ## Anatomy of a Message
 
