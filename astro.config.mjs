@@ -85,6 +85,7 @@ export default defineConfig({
             { label: "Getting Started", link: "/getting-started" },
             { label: "About Ticketon", link: "/about" },
             { label: "Unlimited", link: "/unlimited" },
+            { label: "All Features", link: "/features" },
           ],
         },
         {
