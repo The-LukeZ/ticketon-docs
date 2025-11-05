@@ -1,0 +1,306 @@
+---
+title: Feature List
+description: Complete list of all available features in Ticketon
+sidebar:
+  order: 4
+---
+
+import { Aside, LinkCard } from "@astrojs/starlight/components";
+
+This page provides a comprehensive overview of all features available in Ticketon, organized by category.
+
+## Core Ticketing Features
+
+### Ticket Management
+
+- **Create Tickets**: Users can create support tickets via buttons, select menus, or the `/create-ticket` command
+- **Ticket Categories**: Organize tickets into customizable categories (3 on Free, unlimited on Unlimited plan)
+- **Thread-based Tickets**: Option to use Discord threads instead of channels for tickets
+- **Ticket Naming**: Customizable naming templates with placeholders (`{username}`, `{index}`, `{category}`)
+- **Open Tickets Per User**: Limit how many tickets a user can have open simultaneously (0-10)
+- **Ticket Claiming**: Staff can claim tickets to manage ownership
+- **Ticket Transfer**: Move tickets between categories
+- **Add/Remove Users**: Add up to 5 users or remove users from tickets
+- **Close Requests**: Staff can create close requests asking users if their issues are resolved
+- **Ticket Reopening**: Reopen closed tickets
+- **Ticket Deletion**: Delete closed tickets
+- **Bulk Operations**:
+  - Close all open tickets at once
+  - Delete all closed tickets at once
+- **Auto Threads**: Automatically create private staff threads in new tickets
+- **Close Behavior**: Configure whether tickets are closed or deleted when resolved
+
+### User Management
+
+- **Blacklist System**:
+  - Add users to blacklist to prevent ticket creation
+  - Remove users from blacklist
+  - Check if a user is blacklisted
+- **Open Tickets for Others**: Staff can open tickets on behalf of other users with custom starter messages
+
+### Permissions & Roles
+
+- **Staff Roles**: Assign specific roles that can manage tickets in each category
+- **Manager Roles**: Roles that can manage unclaimed tickets
+- **Manager Bypass**: Allow managers to bypass claim restrictions
+- **Role-based Access**:
+  - Whitelist mode: Only specified roles can create tickets
+  - Blacklist mode: Specified roles cannot create tickets
+
+## Commands
+
+### User Commands
+
+- `/help` - Get list of all available commands
+- `/create-ticket` - Create a new ticket without using buttons/menus
+- `/premium` - Check premium status of the server
+- `/docs` - Search documentation using integrated search
+
+### Staff Commands (Moderate Members permission)
+
+- `/ticket list` - List all open tickets
+- `/ticket claim` - Claim a ticket
+- `/ticket unclaim` - Unclaim a ticket
+- `/ticket add` - Add users to a ticket
+- `/ticket remove` - Remove users from a ticket
+- `/ticket transfer` - Transfer ticket to different category
+- `/ticket close-request create` - Create a close request
+- `/ticket close-request revoke` - Revoke a close request
+- `/ticket close` - Close a ticket
+- `/ticket reopen` - Reopen a closed ticket
+- `/ticket delete` - Delete a ticket
+- `/ticket close-all` - Close all open tickets in server
+- `/ticket delete-all` - Delete all closed tickets in server
+- `/open-ticket-for` - Open a ticket for another user
+- `/blacklist add` - Add user to blacklist
+- `/blacklist remove` - Remove user from blacklist
+- `/blacklist check` - Check if user is blacklisted
+
+### Management Commands
+
+- `/message` - Send custom message to a channel (Manage Messages permission)
+- `/setup` - Get link to setup guide (Manage Server permission)
+- `/config` - Configure bot settings (Manage Server permission)
+
+## Dashboard Features
+
+### Category Configuration
+
+- Name, description, and emoji customization
+- Active/inactive status toggle
+- Form association for data collection
+- Role configuration (whitelist/blacklist modes)
+- Thread vs. channel selection
+- Notification channel setup (for threads)
+- Starter message configuration
+- Open/closed/overflow category channels
+- Staff role assignments
+- Per-user ticket limits
+
+### Forms System
+
+- **Form Creation**: Create custom forms (3 on Free, unlimited on Unlimited plan)
+- **Form Fields**: Up to 5 components per form
+- **Field Types**:
+  - Text Display (non-interactive information)
+  - Text Input (single-line or multi-line)
+  - String Select Menu (dropdown options, 1-25 options)
+  - User Select Menu
+  - Role Select Menu
+  - Channel Select Menu
+  - Mentionable Select Menu
+- **Field Configuration**:
+  - Custom IDs for variable reference
+  - Labels, descriptions, placeholders
+  - Required/optional settings
+  - Min/max length for text inputs
+  - Min/max values for select menus
+  - Default values for text inputs
+
+### Custom Messages
+
+- **Message Types**:
+  - Panel Messages (for ticket creation)
+  - Starter Messages (initial ticket message)
+  - Snippets (reusable templates)
+- **Components V2**: Rich, interactive messages using Discord's latest message components
+- **Layout Components**:
+  - Action Rows (up to 5 buttons or 1 select menu)
+  - Sections (text with accessories)
+  - Containers (embed-like grouping with colored accents)
+  - Separators (spacing and dividers)
+- **Content Components**:
+  - Text Display (Markdown-formatted)
+  - Media Gallery (1-10 images)
+  - Thumbnails
+- **Interactive Components**:
+  - Link Buttons
+  - Create Ticket Buttons
+  - Close Ticket Buttons
+  - Reopen Ticket Buttons
+  - Delete Ticket Buttons
+  - Category Selection Menus
+- **Message Variables**: Dynamic content insertion using placeholders
+  - Common: `{usermention}`, `{username}`, `{userid}`, `{servername}`, `{serverid}`, `{servericonurl}`
+  - Ticket-specific: `{ticketid}`, `{ticketindex}`, `{categoryname}`
+  - Form field values: `{custom-id}` from form inputs
+- **Message Sharing**:
+  - Share messages with others via unique URLs
+  - Password protection for shared messages
+  - Import shared messages from community
+  - Preview shared messages in read-only mode
+- **Message Limits**: Up to 9 messages on Free, unlimited on Unlimited plan (max 200)
+
+### Analytics
+
+<Aside type="note">Some analytics features require the Unlimited plan.</Aside>
+
+#### Core Metrics (Free & Unlimited)
+
+- Total, open, closed, and deleted ticket counts
+- Average response time
+- Average resolution time
+- Resolution rate
+
+#### Ticket Volume (Free & Unlimited)
+
+- Daily ticket volume by status
+- Visual trend charts
+- Weekly comparisons
+
+#### Category Performance (Free & Unlimited)
+
+- Ticket count per category
+- Resolution time per category
+- Satisfaction rating per category
+
+#### Advanced Analytics (Unlimited Only)
+
+- **Form Usage**: Submission counts, most used forms, usage by category
+- **Response & Resolution Times**: Average vs. median times, category breakdowns
+- **Feedback Statistics**: Total feedbacks, average ratings, rating distribution, recent comments
+- **Schedule Performance**: Active status, busiest time slots, ticket creation by slot
+- **User Insights**: Unique users, recurring users, new users, top users, user distribution
+- **Staff Performance**: Tickets handled, resolution times, resolution rates, satisfaction ratings
+
+### Audit Log
+
+- Track all bot-related activities
+- **Logged Events**:
+  - Ticket creation, closing, deletion
+  - Custom message creation, editing, deletion
+  - Form creation, editing, deletion
+  - Category creation, editing, deletion
+- 30-day retention period
+- Detailed action history with timestamps
+
+### Transcripts
+
+- Automatic generation when tickets close
+- Complete message history with timestamps
+- Attachment preservation
+- Designated channel for record-keeping
+- **Transcript Privacy Modes**:
+  - Private (staff only)
+  - Public (also sent to user)
+- **Transcript URLs**:
+  - 24-hour validity
+  - Unique, unguessable IDs
+  - Dynamic generation
+- **Image Preservation** (Unlimited plan):
+  - Upload images to secure CDN
+  - 6-month retention
+  - Images up to 50 MB
+  - Prevents transcript size limitations
+
+### Support Schedule (Unlimited Only)
+
+- Configure server availability hours
+- Daily schedules for each day of the week
+- Up to 3 time slots per day
+- UTC offset configuration
+- Automatic user notification of next available time
+- Day-off support (no time slots = unavailable)
+
+### Premium Management
+
+- View premium/unlimited subscription status
+- Manage subscriptions (for customers)
+- Next payment/expiration dates
+- Direct links to billing portal
+
+### Custom Branding (Unlimited Only)
+
+- **Bot Avatar**: Custom avatar per server
+- **Bot Banner**: Custom banner image
+- **Bot Bio**: Custom "About Me" text
+
+### Global Server Settings
+
+- **Language**: English (en) or German (de) for public bot messages
+- **Manager Roles**: Assign roles that can manage unclaimed tickets
+- **Manager Bypass**: Toggle whether managers can bypass claim restrictions
+- **Transcript Privacy Mode**: Public or private transcript sharing
+
+## Additional Features
+
+### Localization
+
+- **Client Localization**: Based on user's Discord language setting (commands/components)
+- **Server Localization**: Based on dashboard setting (public bot messages)
+- Currently supports: English, German
+
+### Permission System
+
+- Granular command permissions via Discord's integration settings
+- Role-based access control for categories
+- Staff role configuration per category
+- Manager role system for cross-category management
+
+## Feedback Collection (Unlimited Only)
+
+- Post-ticket satisfaction surveys
+- 1-5 star rating system
+- Optional comment collection
+- Analytics integration
+- Category-specific feedback tracking
+
+## Automation Features (Unlimited - In Development)
+
+- Automated ticket workflows
+- Scheduled actions
+
+## Free vs. Unlimited Plan
+
+| Feature                        | Free Plan | Unlimited Plan      |
+| ------------------------------ | --------- | ------------------- |
+| **Categories**                 | 3         | Unlimited (50)      |
+| **Forms**                      | 3         | Unlimited (100)     |
+| **Messages**                   | 9         | Unlimited (200)     |
+| **Audit Log Retention**        | 30 Days   | 30 Days             |
+| **Support Schedule**           | ❌        | ✅                  |
+| **Automation Features**        | ❌        | ✅ (In Development) |
+| **Feedback Collection**        | ❌        | ✅                  |
+| **Preserve Transcript Images** | ❌        | ✅ (In Development) |
+| **Base Analytics**             | ✅        | ✅                  |
+| **Advanced Analytics**         | ❌        | ✅                  |
+| **Custom Avatar**              | ❌        | ✅                  |
+| **Custom Banner**              | ❌        | ✅                  |
+| **Custom Bio**                 | ❌        | ✅                  |
+
+## Discord Integration
+
+### Component Support
+
+- Exclusive use of Discord Components V2
+- No mixing with legacy embeds
+- Modern, interactive message layouts
+- Rich content presentation
+
+---
+
+## Need More Information?
+
+<LinkCard title="Get Started" href="/getting-started" />
+<LinkCard title="Unlimited" href="/unlimited" />
+<LinkCard title="Support Server" href="https://ticketon.app/discord" />
