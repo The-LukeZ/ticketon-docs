@@ -6,8 +6,52 @@ tableOfContents:
   maxHeadingLevel: 2
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, Icon } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
+
+## 05.11.2025
+
+**Message sharing/importing!**
+
+You can now share custom messages in the dashboard with others and also import shared messages from others!
+
+### Sharing Messages
+
+You can click the blue <Icon name="setting" size="1.1.rem" class="inline-block text-blue-500" /> icon next to the message name in the message editor to open settings modal.
+
+<ImageWrapper>
+  ![Message Settings
+  Modal](../../../assets/docs/changelogs/message-share-modal.png)
+</ImageWrapper>
+
+There you can toggle sharing on or off and also enable password protection for your shared message.
+If you enable password protection, a password gets generated that other users need to enter when importing your message.
+When sharing is enabled, a unique URL is generated that you can share with others.
+
+### Importing Shared Messages
+
+To import a shared message, go to the Custom Messages page in the dashboard and click the green <Icon name="download" size="1.1.rem" class="inline-block text-green-500" />
+button next to the "Create New Message" button to open the import modal.
+
+There you need to paste the shared message URL and, if applicable, enter the password.
+
+<ImageWrapper>
+  ![Import Message
+  Modal](../../../assets/docs/changelogs/message-share-import.png)
+</ImageWrapper>
+
+_Note, that the password input only shows up if the shared message is password protected._
+
+### Message Preview
+
+When sharing is enabled for a message, the generated URL can be used to preview the message in read-only mode.
+However, the preview does not display the layout of how it will look in Discord because it would take **very**
+long to implement a full Discord message renderer. Maybe some time in the future...
+
+<ImageWrapper>
+  ![Message Preview
+  Modal](../../../assets/docs/changelogs/message-share-preview.png)
+</ImageWrapper>
 
 ## 04.11.2025
 
