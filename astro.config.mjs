@@ -35,6 +35,7 @@ export default defineConfig({
         }),
       ],
       title: "Ticketon",
+      description: "The ultimate ticketing bot for Discord.",
       logo: {
         src: "./public/logo.png",
         alt: "Ticketon Logo",
