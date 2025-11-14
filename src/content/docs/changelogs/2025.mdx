@@ -9,6 +9,24 @@ tableOfContents:
 import { Aside, Icon } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
 
+## 14.11.2025
+
+**Forms File Upload Component!**
+
+You can now add a File Upload component to your forms in the dashboard!
+
+You can now add a File Upload component to your forms in the dashboard!
+
+This component allows users to upload files when submitting forms, with support for multiple files per field (up to a configurable maximum). Uploaded files are stored in a dedicated thread on the ticket's starter message for easy access and context.
+
+### Key Features:
+
+- **Limitations**: File size is capped by the server's upload limit or the user's Nitro limit (whichever is lower). Supported types are determined by Discord.
+- **Message Label**: Customize the label for the upload message in the thread. If not set, it defaults to the field label.
+- **Handling Oversized Files**: Files exceeding the message size limit are grouped or linked to ensure they fit, maintaining clear context.
+
+For more details, check out the [Forms documentation](/dashboard/forms).
+
 ## 05.11.2025
 
 **Message sharing/importing!**
