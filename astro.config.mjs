@@ -119,7 +119,7 @@ export default defineConfig({
       social: [
         {
           icon: "discord",
-          href: "https://discord.gg/yd5JU8wjRx",
+          href: "https://discord.gg/CkreDcF2PU",
           label: "Support Server",
         },
       ],
