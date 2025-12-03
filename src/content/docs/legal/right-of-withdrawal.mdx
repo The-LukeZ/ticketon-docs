@@ -31,14 +31,18 @@ The refund will be made by the same means of payment that you used for the origi
 
 ## Cancellation form example
 
-<Code title="contact@ticketon.app" code={`
+<Code title="contact.lukez@proton.me" code={`
 [Your first and last name]
 [Your email address]
 
 [Your company's name (if applicable)]
 [Your company's address (if applicable)]
 
-[Date]
+${new Date().toLocaleDateString(undefined, {
+year: "numeric",
+month: "2-digit",
+day: "2-digit",
+})}
 
 Revocation of my contract
 
