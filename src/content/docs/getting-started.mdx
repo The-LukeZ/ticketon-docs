@@ -75,6 +75,7 @@ The layout is simple and intuitive.
     <ImageWrapper>
       ![Ticketon Dashboard Category Settings Mobile Example](../../assets/docs/starting/dashboard-categories-mobile.webp)
     </ImageWrapper>
+
   </TabItem>
 </Tabs>
 
@@ -94,6 +95,10 @@ Go to the <Link href="https://ticketon.app/dash?next=/messages">Messages</Link> 
 Congratulations, you have created your first custom message! Now you can customize your message.
 
 This message can be used for anything you like, but you want to make a message which will be used as a **Panel Message**.
+
+<LinkButton href="/guides/components-v2" icon="right-arrow" variant="secondary">
+  Learn how to build Messages
+</LinkButton>
 
 ### 6. Send the Panel
 
@@ -144,13 +149,19 @@ Tip: If a link doesn't work, ensure you copied the full URL and the bot has acce
 
 #### Users can't create tickets
 
-- Verify category permissions to allow the bot to create channels and manage permissions.
-- Ensure the category is set to **Active** in the dashboard and the category for open tickets is set.
+- Verify permissions in the category to allow the bot to create channels and manage permissions.
+- Ensure the category is set to **Active** in the [dashboard](https://ticketon.app/dash?next=/categories) and the category for open tickets is set.
+
+<ImageWrapper>
+  ![Ticketon Dashboard Category Active
+  Setting](../../assets/docs/starting/dashboard-category-active-inactive-setting.webp)
+</ImageWrapper>
 
 #### Slash commands missing
 
-- Re-invite the bot or wait a few minutes for commands to register; sometimes guild commands are faster.
+- Wait a few minutes for commands to register; sometimes guild commands are faster.
   Sometimes pressing `CTRL`+`R` / `CMD`+`R` in Discord helps.
+- Re-invite the bot if nothing helps.
 
 Recommended permissions (at minimum)
 
