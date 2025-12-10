@@ -1,36 +1,29 @@
 ---
 import "@astrojs/starlight/style/markdown.css";
 import ImageZoom from "starlight-image-zoom/components/ImageZoom.astro";
-
-/*
-    MIT License
-
-    Copyright (c) 2022 withastro
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-*/
 ---
 
 <ImageZoom />
 <div class="sl-markdown-content">
   <slot />
 </div>
+
+<script>
+  // Global click listener to handle clicks on inline code blocks with copy-to-clipboard functionality.
+  // Inline means <p>... <code class="code">...</code> ...</p>
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (
+      target instanceof HTMLElement &&
+      target.tagName.toLowerCase() === "code" &&
+      target.dir === "auto" &&
+      target.closest("p")
+    ) {
+      navigator.clipboard.writeText(target.textContent || "");
+      alert("Code copied to clipboard!");
+    }
+  });
+</script>
 
 <style>
   .sl-markdown-content :global(.heading-wrapper) {
