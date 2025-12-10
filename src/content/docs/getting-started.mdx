@@ -9,6 +9,7 @@ sidebar:
 import { Tabs, TabItem, Aside } from "@astrojs/starlight/components";
 import Link from "../../components/Link.astro";
 import LinkButton from "../../components/LinkButton.astro";
+import ImageWrapper from "../../components/ImageWrapper.astro";
 
 ## What is Ticketon?
 
@@ -57,16 +58,23 @@ The layout is simple and intuitive.
 
 <Tabs syncKey="platform">
   <TabItem label="Desktop" icon="laptop">
-    You have two tabs: **Message Overview** and **Settings**. You have a Dock at the bottom to switch between the two tabs.
-
-    By clicking on a message in the overview, it loads the configuration options and switches the tab to **Settings**.
-
-  </TabItem>
-  <TabItem label="Mobile" icon="phone">
-    The page is divided into two sections: **Message Overview** on the left and **Settings** on the right.
+    The page is divided into two sections: **Messages Overview** on the left and **Settings** on the right.
 
     By clicking on a message in the overview, it loads the configuration options on the right side.
 
+    <ImageWrapper>
+      ![Ticketon Dashboard Category Settings Desktop Example](../../assets/docs/starting/dashboard-categories-desktop.webp)
+    </ImageWrapper>
+
+  </TabItem>
+  <TabItem label="Mobile" icon="phone">
+    You have two tabs: **Messages Overview** and **Settings**. You have a Dock at the bottom to switch between the two tabs.
+
+    By clicking on a message in the overview, it loads the configuration options and switches the tab to **Settings**.
+
+    <ImageWrapper>
+      ![Ticketon Dashboard Category Settings Mobile Example](../../assets/docs/starting/dashboard-categories-mobile.webp)
+    </ImageWrapper>
   </TabItem>
 </Tabs>
 
