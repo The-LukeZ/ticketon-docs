@@ -18,15 +18,7 @@ const sizeClasses = (_size: Props["size"] = "md") =>
 
 <div
   class={`mx-auto overflow-clip image-wrapper ${sizeClasses(size)} ${customClasses}`.trim()}
+  data-type="image-wrapper"
 >
   <slot />
 </div>
-
-<style>
-  .image-wrapper img {
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-</style>
