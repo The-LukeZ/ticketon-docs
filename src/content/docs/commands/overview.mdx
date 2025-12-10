@@ -6,6 +6,7 @@ sidebar:
 ---
 
 import { LinkCard } from "@astrojs/starlight/components";
+import ImageWrapper from "../../../components/ImageWrapper.astro";
 
 This page provides an overview of all available commands for Ticketon.
 
@@ -26,7 +27,21 @@ This page provides an overview of all available commands for Ticketon.
 
 There is no dedicated ping command. Instead, you can check the bot's latency by mentioning it in any channel with `@Ticketon ping` (only in servers). The bot will respond with its status information and some links.
 
-To prevent spam, this feature has a cooldown of 1 minute per server.
+| Response Field    | Description                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| API Ping          | Latency between the bot and Discord's API; Updates every few minutes                      |
+| Roundtrip Latency | Time taken for the bot to respond (Bot > Discord > Bot); Calculated in real-time          |
+| Uptime            | Duration the bot has been online since the last restart; Restarts happen to apply updates |
+| Guilds            | Number of servers the bot is currently in                                                 |
+
+#### Cooldown Period
+
+To prevent spam, this feature has a cooldown of 1 minute per server. The bot will then just react with a ⏳ emoji if you mention it during a cooldown period.
+
+<ImageWrapper>
+  ![Ping Command on Cooldown
+  Example](../../../assets/docs/ping-command-cooldown.png)
+</ImageWrapper>
 
 ## Additional Resources
 
