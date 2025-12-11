@@ -17,6 +17,10 @@ You can now use the `/fix-tickets` command to fix inconsistencies with tickets i
 
 Read more about it on the [Fix Tickets Command page](/commands/fix-tickets).
 
+### More New Stuff
+
+- The default starter message now also displays form results, if any are present.
+
 ### Fix
 
 The edge case that manually deleted ticket channels would not update the ticket status in the database has been fixed. A handler was added to listen for channel deletions and update the ticket status accordingly.
@@ -198,3 +202,4 @@ Additionally, if a ticket has feedback, it will be displayed on the ticket detai
 
 - Fixed a bug where the ticket channel would be publicly visible to all users.
   - The underlying issue was that the permission overwrites for the ticket channel would set the `VIEW_CHANNEL` permission to `false` but the overwrite type was set to `member` instead of `role`, causing the permission to not apply correctly.
+
