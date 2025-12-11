@@ -17,6 +17,11 @@ You can now use the `/fix-tickets` command to fix inconsistencies with tickets i
 
 Read more about it on the [Fix Tickets Command page](/commands/fix-tickets).
 
+### Fix
+
+The edge case that manually deleted ticket channels would not update the ticket status in the database has been fixed. A handler was added to listen for channel deletions and update the ticket status accordingly.
+If the bot is offline when the channel is deleted, you can use the new `/fix-tickets` command to fix the inconsistencies.
+
 ## 14.11.2025
 
 **Forms File Upload Component!**
