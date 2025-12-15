@@ -3,27 +3,12 @@ import "@astrojs/starlight/style/markdown.css";
 import ImageZoom from "starlight-image-zoom/components/ImageZoom.astro";
 ---
 
+<script src="../../scripts/inlineCode.js"></script>
+
 <ImageZoom />
 <div class="sl-markdown-content">
   <slot />
 </div>
-
-<script>
-  // Global click listener to handle clicks on inline code blocks with copy-to-clipboard functionality.
-  // Inline means <p>... <code class="code">...</code> ...</p>
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (
-      target instanceof HTMLElement &&
-      target.tagName.toLowerCase() === "code" &&
-      target.dir === "auto" &&
-      target.closest("p")
-    ) {
-      navigator.clipboard.writeText(target.textContent || "");
-      alert("Code copied to clipboard!");
-    }
-  });
-</script>
 
 <style>
   .sl-markdown-content :global(.heading-wrapper) {
