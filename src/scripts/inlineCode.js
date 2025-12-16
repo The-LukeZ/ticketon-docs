@@ -8,7 +8,7 @@ document.addEventListener("click", (event) => {
     target.tagName.toLowerCase() === "code" &&
     target.dir === "auto"
   ) {
-    console.log("Copying code to clipboard:", target.textContent);
+    console.log(Date.now(), "Copying code to clipboard:", target.textContent);
     navigator.clipboard.writeText(target.textContent || "");
     alert("Code copied to clipboard!");
   }
