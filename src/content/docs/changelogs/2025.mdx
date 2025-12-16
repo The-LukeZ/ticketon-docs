@@ -9,6 +9,21 @@ tableOfContents:
 import { Aside, Icon } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
 
+## 16.12.2025
+
+### Ticket Transfer Changes
+
+Previously, you could only transfer a ticket to another category by using the select menu from the ticket controls.  
+Now, you can also use the `/transfer ticket` command (this was forgotten before, although it was implemented).
+
+There are also a number of changes to how ticket transfers work:
+
+- When transferring a ticket and the new category has a form, and you want the user to fill out the form before transferring,
+  the bot will not directly transfer the ticket, but instead will send a message to the ticket channel with a button that the user can click to fill out the form.
+- By default, the user will **not** be asked to fill out the form (when there is one).
+
+[Read More About Ticket Transfers](/guides/ticket-transfers)
+
 ## 11.12.2025
 
 **Fix Tickets Command!**
@@ -202,4 +217,3 @@ Additionally, if a ticket has feedback, it will be displayed on the ticket detai
 
 - Fixed a bug where the ticket channel would be publicly visible to all users.
   - The underlying issue was that the permission overwrites for the ticket channel would set the `VIEW_CHANNEL` permission to `false` but the overwrite type was set to `member` instead of `role`, causing the permission to not apply correctly.
-
