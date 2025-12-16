@@ -9,10 +9,7 @@ interface Props {
 
 const { header, href, cta } = Astro.props;
 
-let title = `Use ${header}`;
-if (cta) {
-  title = cta;
-}
+let title = cta ?? `Use ${header}`;
 ---
 
 <h3>{header}</h3>
