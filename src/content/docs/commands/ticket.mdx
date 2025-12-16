@@ -6,6 +6,8 @@ sidebar:
 ---
 
 import ImageWrapper from "../../../components/ImageWrapper.astro";
+import Feature from "../../../components/Feature.astro";
+import LinkButton from "../../../components/LinkButton.astro";
 
 This page explains how to use the `ticket` command.
 
@@ -41,8 +43,9 @@ The `transfer` subcommand allows you to move a ticket to a different ticket cate
 This doesn't inherently change the parent category of the ticket channel in the server, but if the new ticket category has
 a different category for open tickets, the ticket channel will be moved to that category.
 
-After executing the command, the bot will send a confirmation message in the ticket channel that it was moved.
-Additionally, the permissions of the ticket channel will be updated to match the new staff roles (if it's not a thread ticket).
+<LinkButton href="/guides/ticket-transfers" icon="right-arrow" variant="secondary">
+  About transferring tickets
+</LinkButton>
 
 ### Close Requests
 
