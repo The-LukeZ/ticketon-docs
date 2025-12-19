@@ -120,3 +120,31 @@ These variables are only available in messages that are sent in the context of a
 If a ticket was created using a form, you can use the Custom IDs of the form fields as variables. However, you need to wrap them in curly braces.
 
 Example: `textinput-1` <ArrowInline /> `{textinput-1}`
+
+## Allowed Mentions Settings
+
+You can configure how Ticketon handles mentions in its messages to prevent unwanted pings.
+In the message editor, click the blue settings button <Icon name="setting" size="1.1.rem" class="inline-block text-blue-500" />
+next to the message name to open the settings modal.
+
+<ImageWrapper>
+  ![Allowed Mentions
+  Settings](../../../assets/docs/changelogs/2025/allowed-mentions-settings.png)
+</ImageWrapper>
+
+It is overall pretty intuitive, but here is a quick overview of the options:
+
+- **Parse Everyone & Here**: If enabled, `@everyone` and `@here` mentions in the message will ping the respective groups in the channel.
+- **Roles**
+  - **All Mentioned Roles**: If selected, all roles mentioned in the message will ping their members.
+  - **No Roles**: If selected, no roles mentioned in the message will ping their members.
+  - **Specific Roles**: If selected, only the roles you specify will ping their members when mentioned in the message.
+- **Users**
+  - **All Mentioned Users**: If selected, all users mentioned in the message will be pinged.
+  - **No Users**: If selected, no users mentioned in the message will be pinged.
+  - **Specific Users**: If selected, only the users which ids you add will be pinged when mentioned in the message.
+
+<Aside type="note">
+  By default, Ticketon disables all mentions to prevent unwanted pings. You can
+  customize this behavior using the Allowed Mentions settings.
+</Aside>
