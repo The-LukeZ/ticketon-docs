@@ -8,6 +8,7 @@ tableOfContents:
 
 import { Aside, Icon } from "@astrojs/starlight/components";
 import ImageWrapper from "../../../components/ImageWrapper.astro";
+import LinkButton from "../../../components/LinkButton.astro";
 
 ## 19.12.2025
 
@@ -22,6 +23,13 @@ You can now configure the allowed mentions for messages, which allows you to con
 
 By default, all mentions are disabled to prevent unwanted pings. Previously, messages sent from the dashboard would also do this,
 but messages sent with commands would still mention everyone (not \@everyone!) by default.
+
+<LinkButton
+  href="/dashboard/messages#allowed-mentions-settings"
+  variant="secondary"
+>
+  Read More
+</LinkButton>
 
 ### Dashboard Changes
 
