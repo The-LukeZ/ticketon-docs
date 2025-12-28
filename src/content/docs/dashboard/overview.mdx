@@ -71,11 +71,12 @@ The dashboard is divided into several key sections:
 
 There are also some global settings that affect your whole server.
 
-| Setting              | Description                                                                                                | Options      | Default |
-| -------------------- | ---------------------------------------------------------------------------------------------------------- | ------------ | ------- |
-| Language             | The language used for public bot messages in your server.                                                  | en, de       | en      |
-| Manager Roles        | Roles that can manage tickets, they did not claim                                                          | Server roles | None    |
-| Allow Manager Bypass | Whether users with a manager role are allowed to manage tickets, bypassing restrictions like claim status. | Yes/No       | No      |
+| Setting              | Description                                                                                                | Options       | Default  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------- | ------------- | -------- |
+| Language             | The language used for public bot messages in your server.                                                  | en, de        | en       |
+| Manager Roles        | Roles that can manage tickets, they did not claim                                                          | Server roles  | None     |
+| Allow Manager Bypass | Whether users with a manager role are allowed to manage tickets, bypassing restrictions like claim status. | Yes/No        | No       |
+| Out of Office Notice | A notice shown to users when they create a ticket while you're out of office.                              | Status & Text | Disabled |
 
 ### Localization
 
@@ -94,3 +95,12 @@ Those users will also be able to respond to their own close requests. This is im
 ### Allow Manager Bypass
 
 When this setting is enabled, users with a manager role can manage tickets without being affected by restrictions like claim status. For example, if a ticket is set to "claimed only", a manager can still manage it even if they haven't claimed it.
+
+### Out of Office Notice
+
+The out of office notice is a message shown to users when they create a ticket while you're marked as out of office.
+If enabled, users will see this notice when they open a ticket and ticket creation will be blocked until the notice it is removed again.
+
+<ImageWrapper>
+  ![Out of Office Notice in Dashboard](../../../assets/docs/ooo-dashboard.png)
+</ImageWrapper>
