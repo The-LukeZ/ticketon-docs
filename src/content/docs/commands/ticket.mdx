@@ -32,6 +32,7 @@ Therefore, it requires `Moderate Members` permission by default.
 | delete \*\*             | Deletes a specified ticket                                      |
 | close-all               | Closes all open tickets in the server                           |
 | delete-all              | Deletes all closed tickets in the server                        |
+| who-claimed \*            | Displays the name of the person who claimed the ticket          |
 
 \* This command is expected to be used within a ticket channel.  
 \*\* This command can be used directly within a ticket channel. When used outside a ticket channel, a ticket ID must be provided.
@@ -71,5 +72,9 @@ When you execute this command, the bot will attempt to close all open tickets. I
 ### Delete All Tickets
 
 The `/ticket delete-all` command allows you to delete all closed tickets in your server with a single command.
+
+### Check Who Claimed
+
+The `/who-claimed` command will display the name of the person who claimed the ticket. (Only works in tickets)
 
 When you execute this command, the bot will attempt to delete all closed tickets. It does this in batches of 5 tickets at a time to avoid hitting rate limits.
