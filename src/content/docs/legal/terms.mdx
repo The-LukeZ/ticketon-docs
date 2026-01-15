@@ -103,7 +103,20 @@ Ticketon is not responsible for the third party's actions or policies. Any dispu
 - Deletion: Images may be deleted after retention expires or by request. We are not responsible for images that are removed due to storage limits or policy enforcement.
 - Cloud provider terms: Use of Cloudflare R2 or other providers is subject to their terms. We may change storage providers and will preserve data where feasible during migrations.
 
-## 10. Miscellaneous
+## 10. Backup and Data Recovery
+
+We maintain automated backup systems to ensure service continuity and data integrity. Our backup infrastructure operates as follows:
+
+- Daily backups are performed automatically
+- Backups older than 7 days and up to 30 days are retained as weekly snapshots (only the first backup of each week)
+- Backups older than 30 days and up to 180 days are retained as monthly snapshots (only the first backup of each month)
+- All backups older than 180 days are automatically and permanently deleted
+
+Our backup system uses full database snapshots (mongodump), which cannot be edited to remove specific user or server data.
+While we implement reasonable backup measures, we do not guarantee complete data recovery in all circumstances.
+Our backup system is designed for disaster recovery and service continuity, not as a user-facing data recovery service.
+
+## 11. Miscellaneous
 
 - Changes: We may update these Terms; material changes will be announced via the dashboard or [changelog](/changelogs/overview). Continued use after changes means acceptance.
 - Governing law: These Terms are governed by applicable law as stated in our documentation or jurisdiction details.

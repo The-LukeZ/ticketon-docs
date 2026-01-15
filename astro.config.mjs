@@ -108,7 +108,6 @@ export default defineConfig({
         {
           label: "Changelogs",
           collapsed: true,
-          // items: [{ label: "2025", link: "/changelogs/2025" }],
           autogenerate: { directory: "changelogs" },
         },
       ],

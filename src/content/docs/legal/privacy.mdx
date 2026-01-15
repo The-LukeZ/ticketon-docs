@@ -131,7 +131,37 @@ including but not limited to third-party services we use for hosting, analytics,
 Our website may contain links to external sites that are not operated by us. Please be aware that we do not
 control the content or policies of these sites and cannot accept responsibility or liability for their privacy practices.
 
-## 12. Your Rights and Responsibilities
+## 12. Data Retention and Backup Practices
+
+We retain your personal data only for as long as necessary to provide our services and comply with legal obligations under applicable data protection laws, including GDPR.
+
+### Backup Storage
+
+Your data is included in our automated backup system stored securely with Cloudflare R2 object storage, located in Western Europe. Our backup retention schedule follows a tiered approach:
+
+- 0-7 days: Daily backups retained
+- 8-30 days: Weekly backups retained
+- 31-180 days: Monthly backups retained
+- Beyond 180 days: Backups are automatically and permanently deleted
+
+**Technical Limitation - Full Database Backups:** Our backup system creates complete database snapshots using `mongodump`.
+Due to the technical nature of this backup method, we cannot selectively delete individual user or server records from existing backup files.
+
+**Deletion Requests and Backup Data:** When you request deletion of your personal data under GDPR Article 17 (Right to Erasure),
+we will immediately delete your data from our active production systems. However, copies of your data may remain in backup
+files for up to 180 days until those backups are automatically purged according to our retention schedule.
+
+**Data "Beyond Use" Commitment:** While your data may technically exist in backup files during this period,
+we commit to placing it "beyond use" as recognized by data protection authorities including the UK ICO. This means:
+
+- Backup data will never be used for operational purposes
+- If we restore a backup to production systems, your previously deleted data will be immediately re-deleted automatically after the system has gone live
+- Backup files are held solely for disaster recovery and are not accessible for any other purpose
+- All backups are securely stored and access is strictly controlled
+
+This approach is consistent with guidance from European data protection authorities, which recognize that selective deletion from full database backups is technically not feasible.
+
+## 13. Your Rights and Responsibilities
 
 As a user, you have the right to know how your data is collected and used. You have the right to know what data we collect about you and how we process it.
 You have the right to correct or update your personal information and request that it be deleted.
