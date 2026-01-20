@@ -45,6 +45,28 @@ To prevent spam, this feature has a cooldown of 1 minute per server. The bot wil
   Example](../../../assets/docs/ping-command-cooldown.png)
 </ImageWrapper>
 
+## Specific Config Commands
+
+Not all config commands will be covered here, only the ones that are not self-explanatory or have additional information.
+
+### Set Language
+
+`/config set-language <language>`
+
+The set language command allows you to change the bot's language for your server. By default, Ticketon uses the server's preferred language as set in Discord if it is supported, otherwise it defaults to English.
+You can use this command to set a specific language for the bot in your server, overriding the default behavior.
+
+### Out of Office Notice
+
+`/config out-of-office-notice`
+
+The out of office notice is a message shown to users when they create a ticket while you're marked as out of office.
+If enabled, users will see this notice when they open a ticket and ticket creation will be blocked until the notice is removed again. To enable this, you can either go to the [Server Dashboard](https://ticketon.app/dash?next=/overview) or use the `/config out-of-office-notice` command.
+
+<ImageWrapper>
+  ![Out of Office Notice Command Example](../../../assets/docs/ooo-command.png)
+</ImageWrapper>
+
 ## Additional Resources
 
 For more detailed information on each command, please refer to the respective documentation pages linked in the table above.
@@ -58,12 +80,3 @@ If you need further assistance, feel free to join our [Discord Support Server](h
   icon="discord"
   target="_blank"
 />
-
-## Out of Office Notice
-
-The out of office notice is a message shown to users when they create a ticket while you're marked as out of office.
-If enabled, users will see this notice when they open a ticket and ticket creation will be blocked until the notice is removed again. To enable this, you can either go to the [Server Dashboard](https://ticketon.app/dash?next=/overview) or use the `/config out-of-office-notice` command.
-
-<ImageWrapper>
-  ![Out of Office Notice Command Example](../../../assets/docs/ooo-command.png)
-</ImageWrapper>
