@@ -40,6 +40,11 @@ The process if pretty much the same in both cases, with some differences noted b
   in order to have the user fill out the form before transferring.
 - If the ticket author is asked to fill out the form, they are not forced to do so. They can choose to ignore it and the ticket will remain
   in the original category. Maybe an option for this will be added in the future.
+- A new starter message will be sent in the ticket channel once the ticket is transferred, just like when a new ticket is created - however, only under a condition:
+  - If the the ticket author fills out the form, the starter message will be sent after the form is submitted.
+  - If either the old or new category has a custom starter message set, otherwise, no new starter message will be sent. This might seem oddly specific,
+    but the idea is that if both categories use the default starter message, there is no need to resend it. Otherwise it would look like a bit weird.
+- New ticket controls will not be sent in the ticket channel when the ticket is transferred, as the existing controls will continue to work.
 
 ## Filling out the form for the new category
 
