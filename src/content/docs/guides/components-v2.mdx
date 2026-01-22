@@ -3,7 +3,7 @@ title: Components V2
 description: A comprehensive guide to using Discord's V2 message components.
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Card, CardGrid, Aside } from "@astrojs/starlight/components";
 
 Discord's Message Components V2 allow you to build rich, interactive messages with complex layouts. This guide provides a quick reference for all available components.
 
@@ -71,6 +71,24 @@ Buttons in Ticketon can have different actions:
 
 A Category Selection Menu is a special type of Select Menu, that holds a list of ticket categories to choose from.
 When a user selects a category, it starts the ticket creation process for that category.
+
+## Form Components
+
+Components V2 also bring along new components for forms (modals). Ticketon's forms support the following components:
+
+- Text Inputs
+- String Select Menus (dropdowns)
+- User/Role/Mentionable/Channel Select Menus
+- File Uploads
+
+This allows for much more interactive and dynamic forms compared to the previous version. Discord is continuing to expand the capabilities of modal components,
+however it usually takes a few weeks for the library used to build Ticketon (discord.js) to support new features after Discord releases them.
+Since discord.js also usually has bugs, new features may take longer to be usable in Ticketon.
+
+<Aside type="note">
+  Discord is currently working on adding support for checkboxes and radio
+  buttons in forms 👀
+</Aside>
 
 ---
 
