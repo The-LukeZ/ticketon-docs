@@ -139,9 +139,8 @@ We retain your personal data only for as long as necessary to provide our servic
 
 Your data is included in our automated backup system stored securely with Cloudflare R2 object storage, located in Western Europe. Our backup retention schedule follows a tiered approach:
 
-- 0-7 days: Daily backups retained
-- 8-30 days: Weekly backups retained
-- 31-180 days: Monthly backups retained
+- 0-31 days: Daily backups retained
+- 32-180 days: Monthly backups retained
 - Beyond 180 days: Backups are automatically and permanently deleted
 
 **Technical Limitation - Full Database Backups:** Our backup system creates complete database snapshots using `mongodump`.

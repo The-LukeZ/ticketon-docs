@@ -108,8 +108,7 @@ Ticketon is not responsible for the third party's actions or policies. Any dispu
 We maintain automated backup systems to ensure service continuity and data integrity. Our backup infrastructure operates as follows:
 
 - Daily backups are performed automatically
-- Backups older than 7 days and up to 30 days are retained as weekly snapshots (only the first backup of each week)
-- Backups older than 30 days and up to 180 days are retained as monthly snapshots (only the first backup of each month)
+- Backups older than 31 days and up to 180 days are retained as monthly snapshots (only the first backup of each month)
 - All backups older than 180 days are automatically and permanently deleted
 
 Our backup system uses full database snapshots (mongodump), which cannot be edited to remove specific user or server data.
