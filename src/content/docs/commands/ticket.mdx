@@ -32,7 +32,7 @@ Therefore, it requires `Moderate Members` permission by default.
 | delete \*\*             | Deletes a specified ticket                                      |
 | close-all               | Closes all open tickets in the server                           |
 | delete-all              | Deletes all closed tickets in the server                        |
-| who-claimed \*            | Displays the name of the person who claimed the ticket          |
+| who-claimed \*          | Displays the name of the person who claimed the ticket          |
 
 \* This command is expected to be used within a ticket channel.  
 \*\* This command can be used directly within a ticket channel. When used outside a ticket channel, a ticket ID must be provided.
@@ -74,3 +74,29 @@ When you execute this command, the bot will attempt to delete all closed tickets
 ### Check Who Claimed
 
 The `/who-claimed` command will display the user who claimed the ticket. (Only works in tickets)
+
+---
+
+## Manage Ticket Access Control
+
+### Who can interact with tickets
+
+1. **Staff Members** - Users with staff roles defined on the ticket category OR manager roles defined for the server
+   - Can perform all ticket actions: claim, unclaim, close, transfer, add/remove users, delete, reopen
+   - Can interact with both claimed and unclaimed tickets
+
+2. **Ticket Claimer** - A staff member who has claimed the ticket
+   - Can perform all ticket actions on that ticket
+   - Other staff members cannot interact with a claimed ticket - only the claimer and managers can
+
+3. **Ticket Author** - The user who created the ticket
+   - Can request to close the ticket (creates a close request rather than closing it directly)
+   - Cannot perform other management actions
+
+### Access Denied scenarios
+
+- Non-staff users (without staff/manager roles) who are **not** the ticket author
+- Non-manager staff trying to interact with a ticket claimed by another staff member
+- The ticket author trying to perform management actions (other than requesting to close)
+
+**Special case:** In the rare case when no staff roles and no manager roles are defined, all users are authorized to perform staff actions. This shoouldn't happen in practice, but it is a fallback to ensure tickets can still be managed.
