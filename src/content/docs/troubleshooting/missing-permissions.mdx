@@ -28,31 +28,28 @@ This is what you might see if you try to create a ticket:
     - This grants the bot broader access across the server
     - Only use this if you fully trust the bot
 
-    ##### Required permissions (either through category or server role):
-    - Manage Channels
-    - Manage Permissions
-    - View Channel
-    - Send Messages
-    - Read Message History
-    - Embed Links
-    - Attach Files
-    - Use External Emojis
-
   </TabItem>
   <TabItem label="Threads Mode">
-    **Check Bot Permissions for the Channel**: Ensure the bot has the following permissions in the channel where tickets are created:
+    **Check Bot Permissions for the Channel**: Ticketon follows the principle of least privilege. You have two options:
 
-    - Manage Channels
-    - Manage Permissions
-    - View Channel
-    - Send Messages
-    - Read Message History
-    - Embed Links
-    - Attach Files
-    - Use External Emojis
+    #### Option 1: Add Ticketon to the Channel (Recommended)
+    - Add the Ticketon role (or bot user) to the channel where tickets are created
+    - The bot will inherit permissions from the server-level role settings and the category-level settings (if in a category)
+    - This is the most secure approach
+
+    #### Option 2: Grant Manage Server Permission
+
+    - Give the Ticketon role the "Manage Server" permission
+    - This grants the bot broader access across the server
+    - Only use this if you fully trust the bot
 
   </TabItem>
 </Tabs>
+
+##### Debugging Missing Permissions
+
+You can use the `/debug` command to check which permissions are missing. It will go through the configuration of the
+selected ticket category and will show you which permissions are missing for the respective configuration.
 
 <Aside type="caution">
   You can give the bot's role the **Administrator** or **Manage Server**
