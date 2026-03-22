@@ -6,6 +6,7 @@ banner:
 ---
 
 import { Aside } from "@astrojs/starlight/components";
+import LinkButton from "../../../components/LinkButton.astro";
 
 The dashboard and certain commands can be restricted to specific users or roles. The access control is managed in the dashboard.
 
@@ -70,3 +71,9 @@ Not all commands are protected by permissions. Only commands that perform action
 By default, those commands require **Manage Server** or **Administrator** permissions nativly in Discord but can be further restricted with explicit permissions as described above.
 
 </Aside>
+
+Note, that some commands require default permissions in Discord, which are separate from the explicit permissions in the dashboard.
+
+<LinkButton href="/troubleshooting/command-permissions/" variant="secondary">
+  Learn about Discord's native command permissions
+</LinkButton>
