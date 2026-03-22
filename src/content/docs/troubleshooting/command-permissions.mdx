@@ -54,6 +54,14 @@ You can also set global commands permissions in Discord on the same page:
   discord](../../../assets/docs/troubleshooting/modify-command-permissions-global-permissions.png)
 </ImageWrapper>
 
+**Be aware: Global command permissions do NOT override default command permissions - because Discord.**
+If a command requires default permissions, you need to override the command's permissions (see below for example) in order to override the default permissions.
+
+<ImageWrapper>
+  ![Overriding command permissions in
+  discord](../../../assets/docs/troubleshooting/modify-command-permissions-overrides.png)
+</ImageWrapper>
+
 ## How Discord's Command Permissions Work
 
 Discord follows this hierarchy when determining if a user can see a command in a channel:
