@@ -15,41 +15,58 @@ The **server owner** can toggle a switch to disable the default access check,
 which allows all users with **Manage Server** or **Administrator** permissions to access the dashboard and use all commands.
 This is the default setting for all servers.
 
-When this setting is enabled, **only** users with explicit permissions will be able to access the dashboard and use commands. Continue reading to learn about explicit permissions.
+When this setting is enabled, **only** users with explicit permissions (and the owner)
+will be able to access the dashboard and use commands.
+Continue reading to learn about explicit permissions.
 
 ## Explicit Permissions
 
-Explicit permissions can be set for both users and roles. If a user has explicit permissions, they will be able to access the dashboard and use the respective commands.
+Explicit permissions can be set for both users and roles. If a user has explicit permissions, they will be able to access the
+dashboard and use the respective commands.
 
-You can set up to **100 users and roles** (combined) with special permissions. Each role or user can be granted a different set of permissions based on what access they need.
+You can set up to **100 users and roles** (combined) with special permissions. Each role or user can be granted a different set
+of permissions based on what access they need.
 
 ### Available Permissions
 
-| Permission          | Description                                                                                                                                  |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Admin**           | Grants all permissions. Only the server owner and users with this permission can manage other permissions. Can only be granted by the owner. |
-| **Global Settings** | Access to server-wide settings and configuration.                                                                                            |
-| **View Tickets**    | Ability to view and browse all support tickets.                                                                                              |
-| **Categories**      | Manage ticket categories.                                                                                                                    |
-| **Forms**           | Manage support forms.                                                                                                                        |
-| **Messages**        | Manage automated messages and message templates.                                                                                             |
-| **Automation**      | Set up and manage ticket automation rules.                                                                                                   |
-| **Custom Branding** | Customize the dashboard appearance and branding.                                                                                             |
-| **Schedule**        | Manage support team schedules.                                                                                                               |
-| **Blacklist**       | Manage the user blacklist.                                                                                                                   |
-| **Audit Log**       | View the audit log of dashboard actions and changes.                                                                                         |
-| **Analytics**       | Access analytics and statistics.                                                                                                             |
+| Permission          | Description                                                                   |
+| ------------------- | ----------------------------------------------------------------------------- |
+| **Admin** \*        | Grants all permissions. Can only be granted by the owner.                     |
+| **Global Settings** | Access to [server-wide settings and configuration](/dashboard/overview/).     |
+| **View Tickets**    | Ability to view and browse all support tickets.                               |
+| **Categories**      | Manage [ticket categories](/dashboard/categories/).                           |
+| **Forms**           | Manage [support forms](/dashboard/forms/).                                    |
+| **Messages**        | Manage [custom messages](/dashboard/messages/).                               |
+| **Automation**      | Manage [automation actions](/dashboard/automation/).                          |
+| **Custom Branding** | [Customize the bot's appearance in your server](/dashboard/custom-branding/). |
+| **Schedule**        | Manage your [support schedules](/dashboard/schedule/).                        |
+| **Blacklist**       | Manage the [blacklist](/dashboard/blacklist/).                                |
+| **Audit Log**       | View the [audit log of dashboard actions and changes](/dashboard/audit-log/). |
+| **Analytics**       | Access [analytics and statistics](/dashboard/analytics/).                     |
+
+\* Only the server owner and users with this permission can manage other permissions.
 
 ### How Permissions Work
 
 The permission system uses a **combination of roles and user permissions**:
 
-- A user can receive permissions through **roles** they're assigned to
+- A user can receive permissions through **roles** they're assigned to (coming from Discord)
 - A user can also receive **individual permissions** assigned directly to them
 - If a user has a permission through **either** a role **or** a direct assignment, they can access that feature
 
-This means if a user is in a role that grants them access to a feature, they have access to it—even if another role or permission doesn't. The system checks all available permissions and grants access if any of them match.
+This means if a user is in a role that grants them access to a feature, they have access to it - even if another
+role or permission doesn't. The system checks all available permissions and grants access if any of them match.
 
 ### Permissions in Commands
 
-The same permission system that protects dashboard sections also protects bot commands. If a user doesn't have the required permission for a command, they'll receive an error message explaining what permission they need. This ensures consistent access control across the entire dashboard and bot.
+The same permission system that protects dashboard sections also protects certain bot commands.
+If a user doesn't have the required permission for a command, they'll receive an error message explaining what permission they need.
+This ensures consistent access control across the entire dashboard and bot.
+
+<Aside type="note">
+
+Not all commands are protected by permissions. Only commands that perform actions related to configuration or management are restricted.
+
+By default, those commands require **Manage Server** or **Administrator** permissions nativly in Discord but can be further restricted with explicit permissions as described above.
+
+</Aside>

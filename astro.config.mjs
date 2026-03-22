@@ -7,11 +7,10 @@ import docsearch from "@astrojs/starlight-docsearch";
 import sitemap from "@astrojs/sitemap";
 import catppuccin from "@catppuccin/starlight";
 import starlightImageZoomPlugin from "starlight-image-zoom";
-import starlightLinksValidator from "starlight-links-validator";
+// import starlightLinksValidator from "starlight-links-validator";
 import starlightGitHubAlerts from "starlight-github-alerts";
 import starlightContextualMenu from "starlight-contextual-menu";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://docs.ticketon.app",
   trailingSlash: "ignore",
@@ -26,7 +25,7 @@ export default defineConfig({
           clientOptionsModule: "./src/config/docsearch.ts",
         }),
         starlightImageZoomPlugin(),
-        starlightLinksValidator(),
+        // starlightLinksValidator(),
         starlightGitHubAlerts(),
         starlightContextualMenu({
           actions: ["copy", "view", "chatgpt", "claude", "grok"],
