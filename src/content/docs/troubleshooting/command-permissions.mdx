@@ -66,14 +66,12 @@ If a command requires default permissions, you need to override the command's pe
 
 ## How Discord's Command Permissions Work
 
-Discord follows this hierarchy when determining if a user can see a command in a channel:
+Discord follows this hierarchy when determining if a user can see a command in a channel. First of all, a user needs **Use Application Commands** permissions in the channel or server to see any commands at all.
 
-- User has **Use Application Commands** permission in the channel or globally
-- Command has role or channel overrides
-- Command has global permission configuration
+Then, for each command, Discord checks whether:
+- Command has role or channel overrides OR
+- Command has global permission configuration OR
 - Command requires default permissions (e.g. Manage Server) and user has them
-
-If any of the above checks fail, the user won't see the command in that channel.
 
 ## How Ticketon's Access Control System Interacts with Command Permissions
 
