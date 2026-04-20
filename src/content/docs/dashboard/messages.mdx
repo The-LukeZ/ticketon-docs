@@ -166,3 +166,14 @@ It is overall pretty intuitive, but here is a quick overview of the options:
   By default, Ticketon disables all mentions to prevent unwanted pings. You can
   customize this behavior using the Allowed Mentions settings.
 </Aside>
+
+<Aside type="caution" icon="warning">
+When a custom message is configured as a starter message, allowed mentions are
+still used. All mentions, except for the support roles and the ticket author,
+are disabled by default.
+
+So if you're mentioning a role in your starter
+message and wondering why it doesn't ping — that's probably why. Configure it
+in the allowed mentions of your custom message and it'll work.
+
+</Aside>
