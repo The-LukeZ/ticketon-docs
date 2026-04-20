@@ -11,7 +11,7 @@ export const collections = {
         // Add a default value to the built-in `banner` field.
         banner: z.object({ content: z.string() }).default({
           content:
-            "A new Dashboard is in the works - some parts of the docs may be outdated.",
+            "A new Dashboard has been released - some parts of the docs may be outdated. Please report any issues.",
         }),
       }),
     }),
