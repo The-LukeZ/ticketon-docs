@@ -1,0 +1,230 @@
+---
+title: Migrating from TicketTool to Ticketon
+description: A step-by-step guide to moving your Discord support setup from TicketTool to Ticketon
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+Welcome! This guide walks you through everything you need to know to move your Discord support setup from **TicketTool** to **Ticketon** — as smoothly as possible.
+
+## Before You Start
+
+1. **Export your TicketTool config** — Go to your TicketTool dashboard → Server Configs → scroll to the bottom → **Config Backup & Restore** → click **Backup** and save your key.
+   This is a safety net in case you need to reference your old settings.
+2. **Save important transcripts** — TicketTool stores transcripts as `.html` files on Discord. Download any you want to keep before migrating, as they won't transfer.
+3. [**Invite Ticketon**](https://ticketon.app/invite) to your server
+4. **Don't remove TicketTool yet** — Keep both bots running side by side until you've fully configured Ticketon and verified everything works.
+
+---
+
+## Concept Mapping: TicketTool → Ticketon
+
+The two bots use different terminology for similar things. Here's the quick translation table:
+
+| TicketTool                         | Ticketon                                           | Notes                                                                                                                             |
+| ---------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Panel**                          | **(Ticket) Category**                              | The core unit of your ticketing setup                                                                                             |
+| **Panel Configs**                  | **(Ticket) Category Configuration**                | Where you set up each ticket type                                                                                                 |
+| **Buttons / Dropdowns on a panel** | **Buttons / Select Menus on a category**           | Same idea, similar Discord components                                                                                             |
+| **Form Options**                   | **Forms**                                          | Forms are now managed separately and linked to categories so they can be reused                                                   |
+| **Storage Category**               | **Overflow Category**                              | For handling Discord's 50-channel-per-category limit                                                                              |
+| **Closed Category**                | **Closed Category Channel**                        | Same concept                                                                                                                      |
+| **Transcript Channel**             | **Transcript Channel**                             | Same concept, more privacy control in Ticketon                                                                                    |
+| **Blacklisted Roles**              | **(Global) Blacklist**                             | Ticketon blacklists are user-based and global, not role-based                                                                     |
+| **Support Team Roles**             | **Staff Roles**                                    | Assigned per category in Ticketon                                                                                                 |
+| **Admin Roles** (dashboard access) | **Manager Roles**                                  | Cross-category management roles                                                                                                   |
+| **Premium Bot**                    | [**Unlimited Plan**](/unlimited) / Not fully added | Currently, there is only one bot, which can be customized with the **Unlimited** Plan. It is planned to add full Whitelabel bots. |
+| `$prefix` commands                 | `/slash` commands                                  | Ticketon is slash-command only, no prefix commands                                                                                |
+| Embeds                             | Components V2                                      | Ticketon uses the new Discord Components system for all messages, no "legacy" embeds — [Read More](/guides/components-v2)         |
+| -                                  | Custom Messages                                    | Custom Message can be used for _anything_ - Panels, Starter Messages, "Snippets", etc.                                            |
+
+<Aside type="caution" icon="information">
+  In the docs and dashboard, **Ticket Categories** are often just called
+  "Categories" for short. If a **Category Channel** in a Discord Server is
+  meant, it will be referred to as **Category Channel** or **Parent Channel**.
+</Aside>
+
+---
+
+## Step-by-Step Migration
+
+### Step 1 — Recreate Your Categories (formerly: Panels)
+
+In TicketTool, your ticketing types lived in **Panels**. In Ticketon, they are called **Ticket Categories**.
+
+1. Go to the [Ticketon Dashboard](https://ticketon.app/dash) and select your server.
+2. Navigate to **Categories** in the sidebar.
+3. Create a category for each Panel you had in TicketTool. Configure:
+   - **Name, description (emoji)** (same as your panel names/labels; the emojis are only used when transferring a ticket to another category and to display it for the person selecting the new category, might be removed in the future)
+   - **Channel vs. Thread** — Ticketon lets you use Discord threads as tickets; choose whichever fits your workflow (On high traffic servers, threads can help avoid hitting channel limits - the Thread limit for a whole Discord server is 1000 **open** threads, while the channel limit is 50 channels per category)
+   - **Open category channel** (where new tickets go) → matches your TicketTool ticket category
+   - **Closed category channel** (optional) → matches your TicketTool closed category
+   - **Overflow category channels** → matches TicketTool's Storage Categories
+   - **Staff roles** → assign the same roles your TicketTool Support Team has - only those roles will be able to see and manage tickets of this category
+   - **Per-user ticket limit** → same as TicketTool's max open tickets setting
+
+<Aside type="tip">
+  Ticketon supports up to 3 categories on the free plan, and unlimited on the
+  Unlimited plan. If you had more than 3 panels in TicketTool, you'll need to
+  upgrade (Currently it's free still — but not for long).
+</Aside>
+
+### Step 2 — Migrate Your Forms
+
+TicketTool's **Form Options** were configured inline per panel. In Ticketon, **Forms** are standalone objects you create once and then link to one or more categories — much more reusable.
+
+1. Go to **Forms** in the dashboard.
+2. Create a form for each set of questions you had in TicketTool.
+3. Ticketon supports richer field types than TicketTool:
+   - Text Input (single-line or multi-line) → same as before
+   - Normal **Select Menu** (dropdown with up to 25 options) → new
+   - User / Role / Channel / Mentionable Select Menus → new
+   - Text Display (non-interactive info text) → new
+4. Once created, go back to each **Category** and link the appropriate form.
+
+> Free plan: up to 3 forms. Unlimited: up to 100.
+
+### Step 3 — Set Up Your Panel Messages
+
+In TicketTool, the message shown in your ticket panel channel was configured per panel. In Ticketon, these are **Custom Messages** (type: _Panel Message_).
+
+1. Go to **Custom Messages** in the dashboard.
+2. Create a Panel Message for each category.
+3. Ticketon uses **Discord Components V2** for message layout — this replaces legacy embeds. You can build rich layouts with Containers, Sections, Media Galleries, and interactive buttons.
+4. Assign the message to the appropriate category.
+
+<Aside type="caution">
+  Discord does _not_ support mixing Components V2 with legacy embeds, by design.
+  You'll need to rebuild them using the Components V2 system. Read more about
+  building messages with Components V2 in our [Components V2
+  Guide](/guides/components-v2).
+</Aside>
+
+### Step 4 — Set Up Starter Messages
+
+The **Starter Message** is the first message posted inside a newly opened ticket.
+
+1. In **Custom Messages**, create a Starter Message for each category.
+2. You can use variables just like TicketTool's `{count}`, `{user}` etc. Ticketon's equivalents:
+
+| TicketTool Variable | Ticketon Variable      |
+| ------------------- | ---------------------- |
+| `{user}`            | `{usermention}`        |
+| `{username}`        | `{username}`           |
+| `{count}`           | `{ticketindex}`        |
+| `{panel}`           | `{categoryname}`       |
+| `{serverName}`      | `{servername}`         |
+| Form answers        | `{your-form-field-id}` |
+
+3. Link each Starter Message to its category.
+
+#### Forms with Custom Starter Messages
+
+Custom Starter Messages do **not** automatically include form answers like TicketTool does. This is because Components V2 messages are highly customizable - and it's up to you where and how to display form answers.
+
+**Example:**  
+You got a form with a "Describe your issue" question (field custom ID: `issue-description`). In your Starter Message, you can display the user's answer with a Text Display component and the variable `{issue-description}`.
+
+For String Select Menus, you will receive all selected **Values** as a comma-separated list in the variable. So if someone selects the option with the Label "Billing" and the value `"billing"`, then `{your-field-id}` will be `"billing"`.
+
+### Step 5 — Configure Transcripts
+
+In TicketTool, transcripts were `.html` files usually with base-64 encoded dataa, sent to a designated channel (or stored Google Drive).
+In Ticketon, transcripts are handled natively with a highly efficient data structure which is also compressed, so more stuff can be embedded — and with more privacy control.
+
+1. Go to the **Category** settings → set your preferred **Transcript Privacy Mode**:
+   - **Private** — transcript sent to staff-only channel
+   - **Public** — transcript also sent to the user who opened the ticket
+2. In each **Category**, configure the **Notification Channel** (where transcripts are posted).
+
+<Aside type="caution">
+  Ticketon does not currently offer Google Drive export. Something similar will
+  be added in the future.
+</Aside>
+
+### Step 6 — Configure Your Blacklist
+
+TicketTool had a **Blacklisted Roles** system — any user with a certain role couldn't open tickets. Ticketon's blacklist works similar: You can configure
+
+- To restrict ticket access by role, use the **Role-based Access** setting in each Category (whitelist or blacklist mode).
+- To block specific users, use `/blacklist add @user` or the Blacklist section in the dashboard.
+
+### Step 7 — Learn the New Commands
+
+TicketTool used `$prefix` commands. Ticketon is **slash-command only**. Here's the command mapping:
+
+| TicketTool Command     | Ticketon Command                                                                         |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| `$close`               | `/ticket close`                                                                          |
+| `$delete`              | `/ticket delete`                                                                         |
+| `$reopen`              | `/ticket reopen`                                                                         |
+| `$transcript`          | Transcripts are generated automatically on close                                         |
+| `$add @user`           | `/ticket add @user`                                                                      |
+| `$remove @user`        | `/ticket remove @user`                                                                   |
+| `$claim`               | `/ticket claim`                                                                          |
+| `$unclaim`             | `/ticket unclaim`                                                                        |
+| `$escalate`            | `/ticket transfer`                                                                       |
+| `$new` / create ticket | `/create-ticket`                                                                         |
+| `$panel [id]`          | Configure and send panels via the dashboard - Or use `/message` to send a custom message |
+
+<Aside type="caution">
+  Staff need the **Moderate Members** Discord permission to use most `/ticket`
+  commands. Adjust your role permissions and/or [command
+  permissions](/troubleshooting/command-permissions/) accordingly.
+</Aside>
+
+### Step 8 — Send Your New Panels
+
+Once all categories and messages are set up:
+
+1. In the Ticketon dashboard, go to the Category you want to post.
+2. Set the **Panel Channel** (the channel where users click to open a ticket).
+3. Click **Send Panel** to post it.
+
+You can now either remove the old TicketTool panel messages manually (delete them in Discord) or wait until you're confident the new setup is working.
+
+<Aside type="note">
+
+If you wanna test the new setup — a second account or a friend with no special
+permissions is recommended, because some things might get a bit wonky if you
+are a ticket author AND have elevated permissions.
+
+I'm aware of that and working on a better experience for users with higher permissions.
+
+</Aside>
+
+## New Things with Ticketon (That TicketTool Doesn't Have)
+
+These features have no equivalent in TicketTool:
+
+| Feature                 | Description                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------------- |
+| **Analytics** \*        | Full dashboard with ticket volume, response times, staff performance, satisfaction ratings  |
+| **Audit Log**           | 30-day log of all config changes (category edits, form edits, message edits, etc.)          |
+| **Support Schedule** \* | Configure available hours; users are notified of the next available time when out of office |
+| **Feedback Collection** | Post-ticket 1-5 star surveys with optional comments (Currently a bit unstable tho)          |
+| **Custom Branding** \*  | Custom bot avatar, banner, and bio per server                                               |
+| **Localization**        | Bot messages in English or German (server-wide), plus per-user Discord language support     |
+
+\* Only in the **Unlimited** Plan or partially available in the free plan (with some limitations).
+
+## Common Gotchas
+
+**"Staff can't use ticket commands"**
+Ensure staff have the **Moderate Members** permission in Discord, or adjust command permissions via Discord's **Integrations → Ticketon** settings in your server.
+
+If you got more issues, please open a post in the [Ticketon Support Server](https://discord.gg/CkreDcF2PU) with details about your problem and we'll help you out.
+
+## After Migration
+
+Once everything is verified:
+
+1. Delete or archive your old TicketTool panel messages in Discord.
+2. Remove TicketTool from your server (Server Settings → Integrations, or kick the bot).
+3. Check out the [Ticketon Changelog](https://docs.ticketon.app/changelogs/overview/) to stay up to date with new features.
+
+Need help? Join the [Ticketon Support Server](https://discord.gg/CkreDcF2PU).
+
+---
+
+_Guide accurate as of April 2026._
