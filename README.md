@@ -78,3 +78,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 ## 📄 License
 
 MIT License Copyright (c) 2026 The-LukeZ
+
+## TODO
+
+- Update Features file with latest features and remove removed ones
+- Update Unlimited features to be updated with the latest changes
