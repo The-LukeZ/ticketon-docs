@@ -113,6 +113,7 @@ export default defineConfig({
       components: {
         Header: "./src/components/overrides/Header.astro",
         MarkdownContent: "./src/components/overrides/MarkdownContent.astro",
+        
       },
       social: [
         {
