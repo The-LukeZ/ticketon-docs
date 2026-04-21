@@ -1,7 +1,8 @@
 {
   "name": "ticketon-docs",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -25,5 +26,6 @@
     "starlight-links-validator": "^0.19.0",
     "tailwindcss": "^4.1.14"
   },
-  "packageManager": "pnpm@10.30.2"
+  "packageManager": "pnpm@10.30.2",
+  "license": "MIT"
 }

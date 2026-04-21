@@ -77,8 +77,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 ## 📄 License
 
-This documentation is part of the Ticketon project.
-
----
-
-Made with ❤️ by the Ticketon team
+MIT License Copyright (c) 2026 The-LukeZ
