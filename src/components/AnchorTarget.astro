@@ -1,0 +1,16 @@
+---
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+---
+<span id={id} class="anchor-target"></span>
+
+<style>
+  .anchor-target {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+</style>
