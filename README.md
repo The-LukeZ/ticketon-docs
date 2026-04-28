@@ -77,8 +77,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full details.
 
 ## 📄 License
 
-This documentation is part of the Ticketon project.
+MIT License Copyright (c) 2026 The-LukeZ
 
----
+## TODO
 
-Made with ❤️ by the Ticketon team
+- Update Features file with latest features and remove removed ones
+- Update Unlimited features to be updated with the latest changes

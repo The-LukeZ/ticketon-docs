@@ -6,7 +6,7 @@ sidebar:
   order: 1
 ---
 
-import { Tabs, TabItem, Aside } from "@astrojs/starlight/components";
+import { Aside } from "@astrojs/starlight/components";
 import Link from "../../components/Link.astro";
 import LinkButton from "../../components/LinkButton.astro";
 import ImageWrapper from "../../components/ImageWrapper.astro";
@@ -44,7 +44,10 @@ import YoutubeCard from "../../components/YoutubeCard.astro";
 
 **You can also watch this video guide if you prefer video content:**
 
-<YoutubeCard href="https://youtu.be/e8TsGU6RF1s" title="Ticketon Starting Guide" />
+<YoutubeCard
+  href="https://youtu.be/e8TsGU6RF1s"
+  title="Ticketon Starting Guide"
+/>
 
 ### 1. Invite Ticketon to your server
 
@@ -56,34 +59,12 @@ import YoutubeCard from "../../components/YoutubeCard.astro";
 
 Go to the <Link href="https://ticketon.app/dash?next=/categories">Dashboard</Link> and login with your Discord account.
 
-Then, select your server, navigate to the **Categories** tab, and click on **Add Category**. Great! You have successfully created your first ticket category.
+Then, select your server, navigate to the **Categories** tab, and click on **Create Category**. Great! You have successfully created your first ticket category.
 
 ### 3. Configure your Ticket Category
 
-The layout is simple and intuitive.
-
-<Tabs syncKey="platform">
-  <TabItem label="Desktop" icon="laptop">
-    The page is divided into two sections: **Messages Overview** on the left and **Settings** on the right.
-
-    By clicking on a message in the overview, it loads the configuration options on the right side.
-
-    <ImageWrapper>
-      ![Ticketon Dashboard Category Settings Desktop Example](../../assets/docs/starting/dashboard-categories-desktop.webp)
-    </ImageWrapper>
-
-  </TabItem>
-  <TabItem label="Mobile" icon="phone">
-    You have two tabs: **Messages Overview** and **Settings**. You have a Dock at the bottom to switch between the two tabs.
-
-    By clicking on a message in the overview, it loads the configuration options and switches the tab to **Settings**.
-
-    <ImageWrapper>
-      ![Ticketon Dashboard Category Settings Mobile Example](../../assets/docs/starting/dashboard-categories-mobile.webp)
-    </ImageWrapper>
-
-  </TabItem>
-</Tabs>
+The layout is a simple single-page editor. Click on a category from the list to open it.
+The edit page shows all settings at once.
 
 You need to change the following settings to get started:
 
@@ -157,11 +138,6 @@ Tip: If a link doesn't work, ensure you copied the full URL and the bot has acce
 
 - Verify permissions in the category to allow the bot to create channels and manage permissions.
 - Ensure the category is set to **Active** in the [dashboard](https://ticketon.app/dash?next=/categories) and the category for open tickets is set.
-
-<ImageWrapper>
-  ![Ticketon Dashboard Category Active
-  Setting](../../assets/docs/starting/dashboard-category-active-inactive-setting.webp)
-</ImageWrapper>
 
 #### Slash commands missing
 

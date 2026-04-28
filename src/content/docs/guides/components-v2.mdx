@@ -4,6 +4,8 @@ description: A comprehensive guide to using Discord's V2 message components.
 ---
 
 import { Card, CardGrid, Aside } from "@astrojs/starlight/components";
+import LinkButton from "../../../components/LinkButton.astro";
+import AnchorTarget from "../../../components/AnchorTarget.astro";
 
 Discord's Message Components V2 allow you to build rich, interactive messages with complex layouts. This guide provides a quick reference for all available components.
 
@@ -62,15 +64,22 @@ Buttons trigger actions when clicked. They must be placed in an `Action Row` or 
 Buttons in Ticketon can have different actions:
 
 1. **Link**: Opens a URL in the user's browser.
-2. **Create Ticket**: Starts the ticket creation process for the configured category.
-3. **Close Ticket**: Closes the ticket (only usable in a ticket channel).
-4. **Reopen Ticket**: Reopens a closed ticket (only usable in a closed ticket channel).
-5. **Delete Ticket**: Deletes the ticket channel and marks the ticket as deleted (only usable in a closed ticket channel).
+2. **Reply**: Replies to the message with another custom message.
+3. **Create Ticket**: Starts the ticket creation process for the configured category.
+4. **Close Ticket**: Closes the ticket (only usable in a ticket channel).
+5. **Reopen Ticket**: Reopens a closed ticket (only usable in a closed ticket channel).
+6. **Delete Ticket**: Deletes the ticket channel and marks the ticket as deleted (only usable in a closed ticket channel).
+7. **Transfer Ticket**: Starts the ticket transfer process (only usable in a ticket channel).
+8. **Add Users**: Starts the process to add users to the ticket (only usable in a ticket channel).
+9. **Remove Users**: Starts the process to remove users from the ticket (only usable in a ticket channel).
+10. **Create Close Request**: Creates a close request for the ticket, which can be approved or denied by the opposing party (only usable in a ticket channel).
+11. **Claim Ticket**: Claims the ticket for the user, if the ticket is unclaimed (only usable in a ticket channel).
+12. **Unclaim Ticket**: Unclaims the ticket, making it available for others to claim (only usable in a ticket channel).
 
-### Category Selection Menu
+### Select Menus
 
-A Category Selection Menu is a special type of Select Menu, that holds a list of ticket categories to choose from.
-When a user selects a category, it starts the ticket creation process for that category.
+Select menus allow users to select options from a dropdown list. They must be placed in an `Action Row` — it must be the only component in the Action Row.
+They can do every action a button can do, ecxept Links.
 
 ## Form Components
 
@@ -80,15 +89,70 @@ Components V2 also bring along new components for forms (modals). Ticketon's for
 - String Select Menus (dropdowns)
 - User/Role/Mentionable/Channel Select Menus
 - File Uploads
+- Checkboxes
+- Checkbox Groups
+- Radio Groups
 
 This allows for much more interactive and dynamic forms compared to the previous version. Discord is continuing to expand the capabilities of modal components,
 however it usually takes a few weeks for the library used to build Ticketon (discord.js) to support new features after Discord releases them.
 Since discord.js also usually has bugs, new features may take longer to be usable in Ticketon.
 
-<Aside type="note">
-  Discord is currently working on adding support for checkboxes and radio
-  buttons in forms 👀
+<LinkButton href="#label-value-separation" variant="secondary">
+  Why are labels and values separated for select menus and checkbox/radio
+  groups?
+</LinkButton>
+
+Most form components are self-explanatory, but let's go through the more complex ones:
+
+### String Select Menus
+
+String Select Menus (dropdowns) allow users to select a options from a dropdown list of up to 25 options.
+Each option has a label (what the user sees) and a value (what you receive in the form submission). You can also set an optional description and emoji for each option.
+
+<Aside type="caution">
+  Make sure to set both the **label** and **value** for each option.
 </Aside>
+
+### Checkboxes
+
+When a checkbox is selected, the form submission has the output of either '✅' or '❌' for that checkbox.
+
+<Aside type="tip">
+  Single Checkboxes **cannot** be marked as required, since they can only have a
+  boolean value. If you want to have a required checkbox, you can use a Checkbox
+  Group with a single checkbox in it — and mark that group as required.
+</Aside>
+
+### Checkbox Groups
+
+Checkbox groups are very special. It allows for a selection of multiple options, each represented by a checkbox. Maximum number of options is 10.
+The output of a checkbox group is multiple values, but you have two options how the output is formatted:
+
+#### Ouput Formats
+
+1. **Unordered List**: the output is a list of values. For example:
+
+   ```md
+   - Value 1
+   - Value 2
+   - Value 3
+   ```
+
+   _Yes, it's called "unordered" because techy terms it is called that, but the output is usually ordered from top to bottom — it's just not numbered._
+
+2. **Comma-Separated**: the output is a comma-separated list of values. For example:
+
+   ```md
+   Value 1, Value 2, Value 3
+   ```
+
+As you can see — you will receive the **values** of the selected options, not the labels. Labels are user-facing, while values are used for processing form submissions.
+Make sure to set the value of each option to something unique and descriptive, since that is what you will receive in the form submission.
+
+### Radio Groups
+
+Radio groups allow users to select a single option from a list of options. Maximum number of options is 10.
+The output of a radio group is the single value of the selected option.
 
 ---
 
@@ -108,5 +172,27 @@ It's either **embeds + action rows** or **components V2 only**.
 You can refer to the official Discord documentation on [Message Components](https://discord.com/developers/docs/interactions/message-components) for detailed information about each component type, their properties, and usage guidelines.
 
 However, this is a developer-focused resource, and may not be very user-friendly for non-developers.
+
+</details>
+
+<details>
+<summary>Why are labels and values separated for select menus and checkbox/radio groups?</summary>
+
+<AnchorTarget id="label-value-separation" />
+
+Let's say you have a select menu for choosing a pre-defined reason for a report.
+For the user you typically want to show a nice label with a sentence describing
+the reason, but for processing the form submission you want to receive a short
+discriptive value that is more concise.
+
+- **Label**: "Why do you want to report this user?"
+  - **Option 1**: "Spamming in channels"
+    - **Value**: "Spam"
+  - **Option 2**: "Harassment or bullying"
+    - **Value**: "Harassment"
+  - **Option 3**: "Impersonation"
+    - **Value**: "Impersonation"
+
+This is a very brief explanation, but I hope it makes it clear why labels and values are separate. They must not be different, but it can be useful to have separate labels and values.
 
 </details>
